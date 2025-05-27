@@ -1,0 +1,17 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $document = $_FILES['document'];
+
+    // डॉक्युमेंट अपलोड लॉजिक
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($document["name"]);
+    if (move_uploaded_file($document["tmp_name"], $target_file)) {
+        echo json_encode(["status" => "success", "message" => "डॉक्युमेंट अपलोड सफल!"]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "डॉक्युमेंट अपलोड विफल!"]);
+    }
+}
+?>

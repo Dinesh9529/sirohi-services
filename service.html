@@ -42,32 +42,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>एजेंट रजिस्ट्रेशन</title>
+    <title>सर्विस विवरण</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>एजेंट रजिस्ट्रेशन</h1>
+        <h1>सर्विस विवरण</h1>
         <nav>
             <a href="index.html">होम</a>
             <a href="register.html">एजेंट रजिस्टर</a>
         </nav>
     </header>
     <main>
-        <form id="register-form" action="upload.php" method="POST" enctype="multipart/form-data">
-            <label for="name">नाम:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">ईमेल:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="phone">फोन नंबर:</label>
-            <input type="tel" id="phone" name="phone" required>
-            <label for="document">डॉक्युमेंट अपलोड:</label>
-            <input type="file" id="document" name="document" accept=".pdf,.jpg,.png" required>
-            <label for="agreement">एग्रीमेंट साइन करें:</label>
-            <input type="checkbox" id="agreement" name="agreement" required>
-            <span>मैं नियम और शर्तें स्वीकार करता हूँ</span>
-            <button type="submit">रजिस्टर करें</button>
-        </form>
+        <h2 id="service-title">सर्विस</h2>
+        <p>यहाँ सर्विस का विवरण दिखाई देगा।</p>
     </main>
     <footer>
         <p>&copy; 2025 हमारी वेबसाइट</p>

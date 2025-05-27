@@ -1,60 +1,83 @@
-<!DOCTYPE html>
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>?????? ??????</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>वेबसाइट होमपेज</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <img src="assets/logo.png" alt="????">
-                <h1>?????? ??????</h1>
-            </div>
-            <nav>
-                <a href="index.html">???</a>
-                <a href="agents.html">???????</a>
-                <a href="register.html">???????</a>
-            </nav>
-        </div>
+        <h1>हमारी वेबसाइट</h1>
+        <nav>
+            <a href="index.html">होम</a>
+            <a href="register.html">एजेंट रजिस्टर</a>
+        </nav>
     </header>
-
-    <section class="hero">
-        <div class="container">
-            <h2>????????? ???? ????????? ?? ??????</h2>
-            <a href="agents.html" class="btn">??????? ?????</a>
-        </div>
-    </section>
-
-    <section class="services">
-        <div class="container">
-            <h2>????? ??????</h2>
-            <div class="grid">
-                <div class="card">
-                    <i class="fas fa-wrench"></i>
-                    <h3>????????</h3>
-                </div>
-                <div class="card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>?????????????</h3>
-                </div>
-                <div class="card">
-                    <i class="fas fa-broom"></i>
-                    <h3>????</h3>
-                </div>
+    <main>
+        <h2>हमारी सेवाएँ</h2>
+        <div class="services">
+            <div class="service-card" onclick="window.location.href='service.html?service=1'">
+                <img src="https://via.placeholder.com/100" alt="सर्विस 1">
+                <h3>सर्विस 1</h3>
+            </div>
+            <div class="service-card" onclick="window.location.href='service.html?service=2'">
+                <img src="https://via.placeholder.com/100" alt="सर्विस 2">
+                <h3>सर्विस 2</h3>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>� 2023 ?????? ??????</p>
+        <h2>हमारे प्रीमियम एजेंट्स</h2>
+        <div class="agents">
+            <div class="agent-card">
+                <img src="https://via.placeholder.com/150" alt="एजेंट">
+                <h3>एजेंट का नाम</h3>
+                <p>पेमेंट के बाद डिटेल्स देखें</p>
+                <a href="agent.html">विवरण</a>
+            </div>
         </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 हमारी वेबसाइट</p>
     </footer>
-
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

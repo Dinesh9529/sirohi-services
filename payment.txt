@@ -1,0 +1,11 @@
+<?php
+// यह एक सिमुलेटेड पेमेंट गेटवे है
+// वास्तविक इंटीग्रेशन के लिए Razorpay, Paytm, या PhonePe API का उपयोग करें
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $amount = 1999; // ₹1999/month
+    // यहाँ पेमेंट API कॉल करें
+    echo json_encode(["status" => "success", "message" => "पेमेंट सफल!"]);
+} else {
+    echo json_encode(["status" => "error", "message" => "अमान्य रिक्वेस्ट"]);
+}
+?>
