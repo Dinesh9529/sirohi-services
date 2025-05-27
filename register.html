@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <!-- ??? ?????? index.html ?? ??? -->
+</head>
+<body>
+    <!-- ???? ?????? index.html ?? ??? -->
+
+    <section class="registration-form">
+        <div class="container">
+            <h2>????? ???????????</h2>
+            <form id="agentRegForm">
+                <div class="form-group">
+                    <label for="fullname">???? ???*</label>
+                    <input type="text" id="fullname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">????*</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">?????? ????*</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">?????? ??????*</label>
+                    <select id="service" required>
+                        <option value="">?????...</option>
+                        <option value="plumbing">????????</option>
+                        <option value="electrician">?????????????</option>
+                        <option value="cleaning">????</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">???????? ????*</label>
+                    <input type="file" id="photo" accept="image/*" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="idproof">???? ?????*</label>
+                    <input type="file" id="idproof" required>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="agreement" required>
+                    <label for="agreement">??? ???? ?? ?????? ?? ???? ???*</label>
+                </div>
+
+                <button type="submit" class="btn">??????? ????</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ???? ?????? index.html ?? ??? -->
+
+    <script src="js/register.js"></script>
+</body>
+</html>
