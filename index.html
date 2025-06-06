@@ -1,83 +1,63 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>वेबसाइट होमपेज</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sirohi Services - Local WhatsApp Business</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; background: #f7f7f7; }
+    header, footer { background: #333; color: white; padding: 1em; text-align: center; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1em; padding: 1em; }
+    .card { background: white; padding: 1em; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+    .card img { width: 64px; height: 64px; }
+    .card a { display: inline-block; margin-top: 0.5em; padding: 0.4em 1em; background: green; color: white; text-decoration: none; border-radius: 6px; }
+    .qr-section { text-align: center; padding: 2em; background: #fff; }
+    .qr-section img { max-width: 240px; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>हमारी वेबसाइट</h1>
-        <nav>
-            <a href="index.html">होम</a>
-            <a href="register.html">एजेंट रजिस्टर</a>
-        </nav>
-    </header>
-    <main>
-        <h2>हमारी सेवाएँ</h2>
-        <div class="services">
-            <div class="service-card" onclick="window.location.href='service.html?service=1'">
-                <img src="https://via.placeholder.com/100" alt="सर्विस 1">
-                <h3>सर्विस 1</h3>
-            </div>
-            <div class="service-card" onclick="window.location.href='service.html?service=2'">
-                <img src="https://via.placeholder.com/100" alt="सर्विस 2">
-                <h3>सर्विस 2</h3>
-            </div>
-        </div>
-        <h2>हमारे प्रीमियम एजेंट्स</h2>
-        <div class="agents">
-            <div class="agent-card">
-                <img src="https://via.placeholder.com/150" alt="एजेंट">
-                <h3>एजेंट का नाम</h3>
-                <p>पेमेंट के बाद डिटेल्स देखें</p>
-                <a href="agent.html">विवरण</a>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2025 हमारी वेबसाइट</p>
-    </footer>
-    <script src="script.js"></script>
+  <header>
+    <h1>Sirohi Services</h1>
+    <p>सभी लोकल सर्विसेज़ एक जगह</p>
+  </header>
+
+  <section class="grid">
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/000000/electricity.png" alt="Electrician">
+      <h3>Electrician</h3>
+      <a href="https://wa.me/918890784773" target="_blank">WhatsApp Inquiry</a>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/000000/plumbing.png" alt="Plumber">
+      <h3>Plumber</h3>
+      <a href="https://wa.me/918890784773" target="_blank">WhatsApp Inquiry</a>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/fluency/96/000000/cctv.png" alt="CCTV">
+      <h3>CCTV Installer</h3>
+      <a href="https://wa.me/918890784773" target="_blank">WhatsApp Inquiry</a>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/fluency/96/000000/cafe.png" alt="Cafe">
+      <h3>Café / Coffee Shop</h3>
+      <a href="https://wa.me/918890784773" target="_blank">WhatsApp Inquiry</a>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/000000/t-shirt.png" alt="Clothing">
+      <h3>Kapdon Ki Dukaan</h3>
+      <a href="https://wa.me/918890784773" target="_blank">WhatsApp Inquiry</a>
+    </div>
+  </section>
+
+  <section class="qr-section">
+    <h2>₹1999 Top Agent Listing</h2>
+    <p>Scan करें और Featured Agent बनें:</p>
+    <img src="payment_qr_dinesh.png" alt="QR Code">
+    <p>या UPI ID से भेजें: <strong>dinesh.tmsystem@oksbi</strong></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sirohi Services | WhatsApp: 8890784773</p>
+  </footer>
 </body>
 </html>
