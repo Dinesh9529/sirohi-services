@@ -1,65 +1,74 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sirohi Services</title>
-  <style>
-    body { font-family: sans-serif; margin: 0; background: #f5f5f5; }
-    header, footer { background: #333; color: #fff; padding: 1em; text-align: center; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1em; padding: 1em; }
-    .card { background: white; padding: 1em; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
-    .card img { width: 80px; height: 80px; object-fit: contain; }
-    .card a { display: inline-block; margin-top: 0.6em; padding: 0.4em 1em; background: green; color: white; text-decoration: none; border-radius: 6px; }
-    .qr-section { text-align: center; padding: 2em; background: #fff; }
-    .qr-section img { max-width: 220px; border-radius: 12px; }
-    h2 { margin-top: 0; }
-  </style>
+    <meta charset="UTF-8">
+    <title>हमारी वेबसाइट</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .services, .agents {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 150px;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Sirohi Services</h1>
-    <p>लोकल WhatsApp सर्विस प्लेटफ़ॉर्म</p>
-  </header>
 
-  <section class="grid">
-    <div class="card">
-      <img src="electrician.png" alt="Electrician">
-      <h3>इलेक्ट्रीशियन</h3>
-      <a href="https://wa.me/918890784773" target="_blank">WhatsApp करें</a>
-    </div>
-    <div class="card">
-      <img src="plumber.png" alt="Plumber">
-      <h3>प्लंबर</h3>
-      <a href="https://wa.me/918890784773" target="_blank">WhatsApp करें</a>
-    </div>
-    <div class="card">
-      <img src="cctv.png" alt="CCTV">
-      <h3>CCTV इंस्टॉलर</h3>
-      <a href="https://wa.me/918890784773" target="_blank">WhatsApp करें</a>
-    </div>
-    <div class="card">
-      <img src="clothes.png" alt="Kapde ki Dukaan">
-      <h3>कपड़ों की दुकान</h3>
-      <a href="https://wa.me/918890784773" target="_blank">WhatsApp करें</a>
-    </div>
-    <div class="card">
-      <img src="cafe.png" alt="Cafe">
-      <h3>कैफ़े / कॉफ़ी शॉप</h3>
-      <a href="https://wa.me/918890784773" target="_blank">WhatsApp करें</a>
-    </div>
-  </section>
+<header>हमारी वेबसाइट</header>
 
-  <section class="qr-section">
-    <h2>₹1999 में Featured Agent बनें</h2>
-    <p>QR को स्कैन करें और भुगतान करें:</p>
-    <img src="payment_qr_dinesh.png" alt="QR Code">
-    <p><strong>या UPI ID:</strong> dinesh.tmsystem@oksbi</p>
-  </section>
+<h2 style="text-align:center;">हमारी सेवाएँ</h2>
+<div class="services">
+    <div class="card"><img src="electrician.png" alt="Electrician"><p>इलेक्ट्रीशियन</p></div>
+    <div class="card"><img src="plumber.png" alt="Plumber"><p>प्लंबर</p></div>
+    <div class="card"><img src="cctv.png" alt="CCTV"><p>CCTV</p></div>
+    <div class="card"><img src="clothes.png" alt="Clothes"><p>कपड़े की दुकान</p></div>
+    <div class="card"><img src="cafe.png" alt="Cafe"><p>कैफे</p></div>
+</div>
 
-  <footer>
-    <p>&copy; 2025 Sirohi Services | WhatsApp: 8890784773</p>
-  </footer>
+<h2 style="text-align:center;">₹1999 प्रीमियम एजेंट</h2>
+<div class="agents">
+    <div class="card">
+        <img src="payment_qr_dinesh.png" alt="QR">
+        <p><b>एजेंट का नाम</b></p>
+        <p>पेमेंट के बाद डिटेल्स देखें</p>
+    </div>
+</div>
+
+<footer>© 2025 हमारी वेबसाइट</footer>
+
 </body>
 </html>
-<src="https://github.com/Dinesh9529/sirohi-services/blob/a355db0403dd685aa6b4ed8aa96c525b6fb7ca16/cctv.png.png" alt="CCTV" width="100>"
