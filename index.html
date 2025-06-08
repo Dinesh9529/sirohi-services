@@ -123,11 +123,11 @@
                     <span class="text-2xl font-bold text-gray-800">Sirohi Services</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#" onclick="showView('home')" class="text-gray-600 hover:text-blue-600">???</a>
-                    <a href="#" onclick="showView('services')" class="text-gray-600 hover:text-blue-600">??????</a>
-                    <a href="#" onclick="showView('about')" class="text-gray-600 hover:text-blue-600">????? ???? ???</a>
-                    <button onclick="showModal('loginModal')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">?????</button>
-                    <button onclick="showModal('registerModal')" class="border border-blue-600 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50">???????</button>
+                    <a href="#" onclick="showView('home')" class="text-gray-600 hover:text-blue-600">होम</a>
+                    <a href="#" onclick="showView('services')" class="text-gray-600 hover:text-blue-600">सेवाएं</a>
+                    <a href="#" onclick="showView('about')" class="text-gray-600 hover:text-blue-600">हमारे बारे में</a>
+                    <button onclick="showModal('loginModal')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">लॉगिन</button>
+                    <button onclick="showModal('registerModal')" class="border border-blue-600 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50">रजिस्टर</button>
                 </div>
                 <button class="md:hidden" onclick="toggleMobileMenu()">
                     <i class="fas fa-bars text-xl"></i>
@@ -139,11 +139,11 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="md:hidden bg-white border-t hide">
         <div class="px-4 py-2 space-y-2">
-            <a href="#" onclick="showView('home')" class="block py-2 text-gray-600">???</a>
-            <a href="#" onclick="showView('services')" class="block py-2 text-gray-600">??????</a>
-            <a href="#" onclick="showView('about')" class="block py-2 text-gray-600">????? ???? ???</a>
-            <button onclick="showModal('loginModal')" class="block w-full text-left py-2 text-blue-600">?????</button>
-            <button onclick="showModal('registerModal')" class="block w-full text-left py-2 text-blue-600">???????</button>
+            <a href="#" onclick="showView('home')" class="block py-2 text-gray-600">होम</a>
+            <a href="#" onclick="showView('services')" class="block py-2 text-gray-600">सेवाएं</a>
+            <a href="#" onclick="showView('about')" class="block py-2 text-gray-600">हमारे बारे में</a>
+            <button onclick="showModal('loginModal')" class="block w-full text-left py-2 text-blue-600">लॉगिन</button>
+            <button onclick="showModal('registerModal')" class="block w-full text-left py-2 text-blue-600">रजिस्टर</button>
         </div>
     </div>
 
@@ -152,14 +152,14 @@
         <!-- Hero Section -->
         <section class="hero-gradient text-white py-20">
             <div class="max-w-7xl mx-auto px-4 text-center">
-                <h1 class="text-5xl font-bold mb-6">?????? ?? ??? ?????? ?? ???</h1>
-                <p class="text-xl mb-8 opacity-90">?????-????? ?????????? - ?? ????? ?? ?? ????????</p>
+                <h1 class="text-5xl font-bold mb-6">सिरोही की सभी सेवाएं एक जगह</h1>
+                <p class="text-xl mb-8 opacity-90">मल्टी-वेंडर प्लेटफॉर्म - आप मांगो तो हम पहुंचाते</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <button onclick="showView('services')" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
-                        <i class="fas fa-search mr-2"></i>???? ?????
+                        <i class="fas fa-search mr-2"></i>सेवा खोजें
                     </button>
                     <button onclick="showModal('vendorRegisterModal')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
-                        <i class="fas fa-store mr-2"></i>?????? ??????
+                        <i class="fas fa-store mr-2"></i>बिजनेस जोड़ें
                     </button>
                 </div>
             </div>
@@ -168,31 +168,31 @@
         <!-- Featured Services -->
         <section class="py-16">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12">????? ??????</h2>
+                <h2 class="text-3xl font-bold text-center mb-12">मुख्य सेवाएं</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                     <div class="service-card bg-white p-6 rounded-xl shadow-lg text-center card-hover cursor-pointer" onclick="filterServices('electrician')">
                         <i class="fas fa-bolt text-3xl text-yellow-500 mb-4"></i>
-                        <h3 class="font-semibold text-gray-800">?????????????</h3>
+                        <h3 class="font-semibold text-gray-800">इलेक्ट्रीशियन</h3>
                     </div>
                     <div class="service-card bg-white p-6 rounded-xl shadow-lg text-center card-hover cursor-pointer" onclick="filterServices('plumber')">
                         <i class="fas fa-wrench text-3xl text-blue-500 mb-4"></i>
-                        <h3 class="font-semibold text-gray-800">??????</h3>
+                        <h3 class="font-semibold text-gray-800">प्लंबर</h3>
                     </div>
                     <div class="service-card bg-white p-6 rounded-xl shadow-lg text-center card-hover cursor-pointer" onclick="filterServices('doctor')">
                         <i class="fas fa-user-md text-3xl text-green-500 mb-4"></i>
-                        <h3 class="font-semibold text-gray-800">??????</h3>
+                        <h3 class="font-semibold text-gray-800">डॉक्टर</h3>
                     </div>
                     <div class="service-card bg-white p-6 rounded-xl shadow-lg text-center card-hover cursor-pointer" onclick="filterServices('grocery')">
                         <i class="fas fa-shopping-basket text-3xl text-orange-500 mb-4"></i>
-                        <h3 class="font-semibold text-gray-800">??????</h3>
+                        <h3 class="font-semibold text-gray-800">किराना</h3>
                     </div>
                     <div class="service-card bg-white p-6 rounded-xl shadow-lg text-center card-hover cursor-pointer" onclick="filterServices('cafe')">
                         <i class="fas fa-coffee text-3xl text-brown-500 mb-4"></i>
-                        <h3 class="font-semibold text-gray-800">????</h3>
+                        <h3 class="font-semibold text-gray-800">कैफे</h3>
                     </div>
                     <div class="service-card bg-white p-6 rounded-xl shadow-lg text-center card-hover cursor-pointer" onclick="filterServices('more')">
                         <i class="fas fa-ellipsis-h text-3xl text-gray-500 mb-4"></i>
-                        <h3 class="font-semibold text-gray-800">?? ??</h3>
+                        <h3 class="font-semibold text-gray-800">और भी</h3>
                     </div>
                 </div>
             </div>
@@ -201,275 +201,275 @@
     <!-- Detailed Services Section -->
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">??? ??????</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">सभी सेवाएं</h2>
             <div class="services-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Service Cards will be inserted here -->
                 <div class="card">
                     <img src="electrician.jpg" alt="Electrician">
-                    <p>Electrician</p>
-                    <a href="https://wa.me/918890784773?text=??????%2C%20????%20?????????????%20??%20????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <p>इलेक्ट्रीशियन</p>
+                    <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20इलेक्ट्रीशियन%20की%20सेवा%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="plumber.jpg" alt="Plumber">
-                    <p>Plumber</p>
-                    <a href="https://wa.me/918890784773?text=??????%2C%20????%20??????%20??%20????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <p>प्लंबर</p>
+                    <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20प्लंबर%20की%20सेवा%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="cctv.jpg" alt="CCTV">
                     <p>CCTV</p>
-                    <a href="https://wa.me/918890784773?text=??????%2C%20????%20CCTV%20??????????%20??????%20???" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20CCTV%20इंस्टॉलेशन%20करवाना%20है।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="clothes.jpg" alt="Clothes">
-                    <p>Clothes Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????%2C%20???%20?????%20??%20???????%20????%20?????%20????" target="_blank">WhatsApp पर पूछें</a>
+                    <p>कपड़े की दुकान</p>
+                    <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मैं%20कपड़े%20की%20जानकारी%20लेना%20चाहता%20हूँ।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="cafe.jpg" alt="Cafe">
-                    <p>Cafe</p>
-                    <a href="https://wa.me/918890784773?text=??????%2C%20????%20????%20??%20??????%20??%20??????%20?????%20???" target="_blank">WhatsApp पर पूछें</a>
+                    <p>कैफे</p>
+                    <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20कैफे%20की%20लोकेशन%20और%20मेन्यू%20जानना%20है।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="schools.jpg" alt="Schools">
                     <p>Schools</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Schools%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Schools%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="hospitals.png" alt="Hospitals">
                     <p>Hospitals</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Hospitals%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Hospitals%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="doctor.png" alt="Doctor">
                     <p>Doctor</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Doctor%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Doctor%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="medical.png" alt="Medical">
-                    <p>Medical Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Medical%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <p>Medical</p>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Medical%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
-                    <img src="kirana_shop.png" alt="Kirana  ?? ?????">
+                    <img src="kirana_shop.png" alt="Kirana  की दुकान">
                     <p>Kirana  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Kirana%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Kirana%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="milk_dairy.png" alt="Milk Dairy">
                     <p>Milk Dairy</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Dairy%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Dairy%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="nasta_shop.png" alt="Nasta Shop">
                     <p>Nasta  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Nasta%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Nasta%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="jwellery_shop.png" alt="Jwellery  Shop">
                     <p>Jwellery  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Jwellery%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें?</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Jwellery%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="tent_house.png" alt="Tent House">
                     <p>Tent  House</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Tent%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Tent%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="electronic_shop.png" alt="Electronic Shop">
                     <p>Electronic Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Electronic%20Item%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Electronic%20Item%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="ayurvedic_shop.png" alt="Ayurvedic Shop">
                     <p>Ayurvedic  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Ayurvedic%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Ayurvedic%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="insurance_office.png" alt="Insurance Office">
                     <p>Insurance Office</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Insurance%20Office%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Insurance%20Office%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="insurance_advisor.png" alt="Insurance Advisor">
                     <p>Insurance Advisor</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Insurance%20Advisor%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Insurance%20Advisor%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="bank.png" alt="Bank">
                     <p>Bank</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Banks%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Banks%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="nbfc.png" alt="NBFC">
                     <p>NBFC</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20NBFC%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20NBFC%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="construction.png" alt="Construction">
                     <p>Construction</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Contractor%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Contractor%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="property.png" alt="Property">
                     <p>Property</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Property%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Property%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="property_brokers.jpg" alt="Property Brokers">
                     <p>Property Brokers</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Property%20Brokers%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Property%20Brokers%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="mobile_shop.png" alt="Mobile Shop">
                     <p>Mobile  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Mobile%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Mobile%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="mobile_repairing_shop.png" alt="Mobile Repairing  Shop">
                     <p>Mobile Repairing   Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Mobile%20Repairing%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Mobile%20Repairing%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="sweets_shops.png" alt="Sweets  Shops">
                     <p>Sweet  Shops</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Mithai%20%20??%20?????s%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Mithai%20%20की%20दुकानs%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="gym.png" alt="Gym">
                     <p>Gym</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Gym%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Gym%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="rental_homes.png" alt="Rental Homes">
                     <p>Rental Homes</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Rental%20Homes%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Rental%20Homes%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="plots.png" alt="Plots">
                     <p>Plots</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Plots%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Plots%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="car_showroom.png" alt="Car Showroom">
                     <p>Car Showroom</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Car%20Showroom%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Car%20Showroom%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="bike_showroom.png" alt="Bike Showroom">
                     <p>Bike Showroom</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Bike%20Showroom%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Bike%20Showroom%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="masaj_parlour.png" alt="Masaj  Parlour">
                     <p>Masaj  Parlour</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Masaj%20%20??????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Masaj%20%20पार्लर%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="beauti_parlour.png" alt="Beauti  Parlour">
                     <p>Beauti  Parlour</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Beauti%20%20??????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Beauti%20%20पार्लर%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="ladies_clothes_shop.png" alt="Ladies Clothes  Shop">
                     <p>Ladies Clothes  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Ladies%20Clothes%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Ladies%20Clothes%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="gents_clothes_shop.png" alt="Gents Clothes  Shop">
                     <p>Gents Clothes  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Gents%20Clothes%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Gents%20Clothes%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="child_clothes_shop.png" alt="Child Clothes  Shop">
                     <p>Child Clothes  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Child%20Clothes%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Child%20Clothes%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="airtel.png" alt="Airtel">
                     <p>Airtel</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Airtel%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Airtel%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="jio.png" alt="Jio">
                     <p>Jio</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Jio%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Jio%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="shoes_shop.png" alt="Shoes  Shop">
                     <p>Shoes  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Shoes%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Shoes%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="books_shop.png" alt="Books  Shop">
                     <p>Books  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Books%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Books%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="coaching_centers.png" alt="Coaching Centers">
                     <p>Coaching Centers</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Coaching%20Centers%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Coaching%20Centers%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="library.png" alt="Library">
                     <p>Library</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Library%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Library%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="computer_shop.png" alt="Computer  Shop">
                     <p>Computer  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Computer%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Computer%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="tailor_shop.png" alt="Tailor Shop">
                     <p>Tailor  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Tailor%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Tailor%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="fruit_shop.png" alt="Fruit  Shop">
                     <p>Fruit  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Fruit%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Fruit%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="fresh_vegetable_shop.png" alt="Fresh Vegetable  Shop">
                     <p>Fresh Vegetable  Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Fresh%20Vegetable%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Fresh%20Vegetable%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="video_shooting_shop.png" alt="Video Shooting  Shop">
                     <p>Video Shooting Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Marrige%20Video%20Shooting%20%20??%20?????%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Marrige%20Video%20Shooting%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="marriege_garden.png" alt="Marriege Garden">
                     <p>Marriege Garden</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Marriege%20Garden%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Marriege%20Garden%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="marriege_hall.png" alt="Marriege Hall">
                     <p>Marriege Hall</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Marriege%20Hall%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Marriege%20Hall%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="advocate.png" alt="Advocate">
                     <p>Advocate</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Advocate%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Advocate%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="holsel_anaj_ke_vikreta.png" alt="Holsel Anaj Ke Vikreta">
                     <p>Holsel Anaj Ke Vikreta</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Holsel%20Anaj%20Ke%20Vikreta%20??%20???????%20??????" target="_blank">WhatsApp पर पूछें</a>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Holsel%20Anaj%20Ke%20Vikreta%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
                 </div>
                 <div class="card">
                     <img src="ca_service.jpg" alt="Chartered Accountant">
                     <p>Chartered Accountant (CA)</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Chartered%20Accountant%20(???)%20??%20??????%20??????%0A--%0A(Sirohi Services ??)" target="_blank">
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Chartered%20Accountant%20(सीए)%20की%20सेवाएँ%20चाहिए।%0A--%0A(Sirohi Services से)" target="_blank">
                         WhatsApp पर पूछें
                     </a>
                 </div>
                 <div class="card">
-                    <img src="tiles_shop.png" alt="Tiles Shop">
-                    <p>Tiles Shop</p>
-                    <a href="https://wa.me/918890784773?text=??????,%20????%20Tiles%20??%20?????%20??%20???????%20??????%0A--%0A(Sirohi Services ??)" target="_blank">
+                    <img src="tiles_shop.png" alt="Tiles की दुकान">
+                    <p>Tiles की दुकान</p>
+                    <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Tiles%20की%20दुकान%20की%20जानकारी%20चाहिए।%0A--%0A(Sirohi Services से)" target="_blank">
                         WhatsApp पर पूछें
                     </a>
                 </div>
@@ -481,53 +481,53 @@
         <!-- Vendor Plans -->
         <section class="py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12">????? ???????</h2>
+                <h2 class="text-3xl font-bold text-center mb-12">वेंडर प्लान्स</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Free Plan -->
                     <div class="plan-card p-8 rounded-xl shadow-lg border-2 border-gray-200">
                         <div class="text-center">
-                            <h3 class="text-2xl font-bold mb-4">FREE ?????</h3>
-                            <div class="text-4xl font-bold text-green-600 mb-6">?0<span class="text-lg text-gray-500">/?????</span></div>
+                            <h3 class="text-2xl font-bold mb-4">FREE प्लान</h3>
+                            <div class="text-4xl font-bold text-green-600 mb-6">₹0<span class="text-lg text-gray-500">/महीना</span></div>
                             <ul class="text-left space-y-3 mb-8">
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>?100 ?? ?? ?????</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>20% ?????</li>
-                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>????? ??????</li>
-                                <li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>?????????? ????????</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>₹100 तक का ऑर्डर</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>20% कमिशन</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>बेसिक सपोर्ट</li>
+                                <li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>प्राइऑरिटी लिस्टिंग</li>
                             </ul>
-                            <button onclick="selectPlan('free')" class="w-full bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700">?????</button>
+                            <button onclick="selectPlan('free')" class="w-full bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700">चुनें</button>
                         </div>
                     </div>
                     
                     <!-- Premium Plan -->
                     <div class="premium-plan p-8 rounded-xl shadow-xl border-2 border-yellow-400 relative">
                         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                            <span class="bg-yellow-500 text-white px-4 py-1 rounded-full text-sm font-semibold">??????</span>
+                            <span class="bg-yellow-500 text-white px-4 py-1 rounded-full text-sm font-semibold">पॉपुलर</span>
                         </div>
                         <div class="text-center">
-                            <h3 class="text-2xl font-bold mb-4">?3500 ?????</h3>
-                            <div class="text-4xl font-bold mb-6">?3500<span class="text-lg opacity-80">/?????</span></div>
+                            <h3 class="text-2xl font-bold mb-4">₹3500 प्लान</h3>
+                            <div class="text-4xl font-bold mb-6">₹3500<span class="text-lg opacity-80">/महीना</span></div>
                             <ul class="text-left space-y-3 mb-8 opacity-90">
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>?50 ?? ?? ?????</li>
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>10% ?????</li>
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>?????????? ??????</li>
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>?????? ????????</li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>₹50 तक का ऑर्डर</li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>10% कमिशन</li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>प्राइऑरिटी सपोर्ट</li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>फीचर्ड लिस्टिंग</li>
                             </ul>
-                            <button onclick="selectPlan('premium')" class="w-full bg-white text-yellow-600 py-3 rounded-lg font-semibold hover:bg-gray-100">?????</button>
+                            <button onclick="selectPlan('premium')" class="w-full bg-white text-yellow-600 py-3 rounded-lg font-semibold hover:bg-gray-100">चुनें</button>
                         </div>
                     </div>
                     
                     <!-- Business Plan -->
                     <div class="business-plan p-8 rounded-xl shadow-xl">
                         <div class="text-center">
-                            <h3 class="text-2xl font-bold mb-4">?5000 ?????</h3>
-                            <div class="text-4xl font-bold mb-6">?5000<span class="text-lg opacity-80">/?????</span></div>
+                            <h3 class="text-2xl font-bold mb-4">₹5000 प्लान</h3>
+                            <div class="text-4xl font-bold mb-6">₹5000<span class="text-lg opacity-80">/महीना</span></div>
                             <ul class="text-left space-y-3 mb-8 opacity-90">
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>????????? ?????</li>
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>???? 5% ?????</li>
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>??? ??????</li>
-                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>???????? ????????</li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>अनलिमिटेड ऑर्डर</li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>केवल 5% कमिशन</li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>टॉप सपोर्ट</li>
+                                <li class="flex items-center"><i class="fas fa-check mr-2"></i>प्रीमियम लिस्टिंग</li>
                             </ul>
-                            <button onclick="selectPlan('business')" class="w-full bg-white text-blue-600 py-3 rounded-lg font-semibold hover:bg-gray-100">?????</button>
+                            <button onclick="selectPlan('business')" class="w-full bg-white text-blue-600 py-3 rounded-lg font-semibold hover:bg-gray-100">चुनें</button>
                         </div>
                     </div>
                 </div>
@@ -542,43 +542,43 @@
                 <!-- Filters Sidebar -->
                 <div class="w-full md:w-1/4">
                     <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="font-bold text-lg mb-4">?????? ????</h3>
+                        <h3 class="font-bold text-lg mb-4">फिल्टर करें</h3>
                         <div class="space-y-2">
                             <label class="flex items-center">
                                 <input type="checkbox" class="mr-2" value="electrician">
-                                <span>?????????????</span>
+                                <span>इलेक्ट्रीशियन</span>
                             </label>
                             <label class="flex items-center">
                                 <input type="checkbox" class="mr-2" value="plumber">
-                                <span>??????</span>
+                                <span>प्लंबर</span>
                             </label>
                             <label class="flex items-center">
                                 <input type="checkbox" class="mr-2" value="doctor">
-                                <span>??????</span>
+                                <span>डॉक्टर</span>
                             </label>
                             <label class="flex items-center">
                                 <input type="checkbox" class="mr-2" value="grocery">
-                                <span>??????</span>
+                                <span>किराना</span>
                             </label>
                         </div>
                         
-                        <h3 class="font-bold text-lg mb-4 mt-6">???????</h3>
+                        <h3 class="font-bold text-lg mb-4 mt-6">क्षेत्र</h3>
                         <select class="w-full p-2 border border-gray-300 rounded">
-                            <option>??? ???????</option>
-                            <option>???? ?????</option>
-                            <option>??? ?????</option>
-                            <option>????? ???</option>
+                            <option>सभी क्षेत्र</option>
+                            <option>सिटी सेंटर</option>
+                            <option>रेल बाजार</option>
+                            <option>कॉलेज रोड</option>
                         </select>
                         
-                        <h3 class="font-bold text-lg mb-4 mt-6">??????</h3>
+                        <h3 class="font-bold text-lg mb-4 mt-6">रेटिंग</h3>
                         <div class="space-y-2">
                             <label class="flex items-center">
                                 <input type="radio" name="rating" class="mr-2" value="4+">
-                                <span>4? ?? ???</span>
+                                <span>4★ से ऊपर</span>
                             </label>
                             <label class="flex items-center">
                                 <input type="radio" name="rating" class="mr-2" value="3+">
-                                <span>3? ?? ???</span>
+                                <span>3★ से ऊपर</span>
                             </label>
                         </div>
                     </div>
@@ -587,11 +587,11 @@
                 <!-- Services Grid -->
                 <div class="w-full md:w-3/4">
                     <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-2xl font-bold">??? ??????</h2>
+                        <h2 class="text-2xl font-bold">सभी सेवाएं</h2>
                         <select class="p-2 border border-gray-300 rounded">
-                            <option>?????????? ?? ??????</option>
-                            <option>?????? ?? ??????</option>
-                            <option>???? ?? ??????</option>
+                            <option>लोकप्रियता के अनुसार</option>
+                            <option>रेटिंग के अनुसार</option>
+                            <option>दूरी के अनुसार</option>
                         </select>
                     </div>
                     
@@ -681,7 +681,7 @@
                                 </div>
                                 <div class="ml-4">
                                     <p class="text-gray-600">Revenue</p>
-                                    <p class="text-2xl font-bold">?45,678</p>
+                                    <p class="text-2xl font-bold">₹45,678</p>
                                 </div>
                             </div>
                         </div>
@@ -722,8 +722,8 @@
                                 <select class="p-2 border border-gray-300 rounded-lg">
                                     <option>All Plans</option>
                                     <option>Free</option>
-                                    <option>?3500</option>
-                                    <option>?5000</option>
+                                    <option>₹3500</option>
+                                    <option>₹5000</option>
                                 </select>
                             </div>
                         </div>
@@ -758,7 +758,7 @@
             <div class="w-64 bg-white shadow-lg">
                 <div class="p-6">
                     <h2 class="text-xl font-bold text-gray-800">Vendor Panel</h2>
-                    <p class="text-sm text-gray-600" id="vendorName">??? ?????? ?????</p>
+                    <p class="text-sm text-gray-600" id="vendorName">राम किराना स्टोर</p>
                 </div>
                 <nav class="mt-6">
                     <a href="#" onclick="showVendorSection('dashboard')" class="vendor-nav-item block py-3 px-6 text-gray-600 hover:bg-blue-50 hover:text-blue-600 border-r-2 border-blue-600">
@@ -791,7 +791,7 @@
                             <i class="fas fa-exclamation-triangle text-yellow-600 mr-3"></i>
                             <div>
                                 <p class="font-semibold text-yellow-800">Plan Expiry Alert</p>
-                                <p class="text-yellow-700">Your ?3500 plan expires in 7 days. Renew now to continue getting leads.</p>
+                                <p class="text-yellow-700">Your ₹3500 plan expires in 7 days. Renew now to continue getting leads.</p>
                             </div>
                             <button class="ml-auto bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700">Renew</button>
                         </div>
@@ -839,7 +839,7 @@
                                 </div>
                                 <div class="ml-4">
                                     <p class="text-gray-600">Pending Payment</p>
-                                    <p class="text-2xl font-bold">?600</p>
+                                    <p class="text-2xl font-bold">₹600</p>
                                 </div>
                             </div>
                         </div>
@@ -861,7 +861,7 @@
                                 <i class="fas fa-shopping-cart text-blue-500 mr-3"></i>
                                 <div class="flex-1">
                                     <p class="font-medium">Order #1234 placed</p>
-                                    <p class="text-sm text-gray-600">?450 order for rice and dal - 15 min ago</p>
+                                    <p class="text-sm text-gray-600">₹450 order for rice and dal - 15 min ago</p>
                                 </div>
                                 <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">View</button>
                             </div>
@@ -893,8 +893,8 @@
             <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
                 <div class="flex items-center justify-between">
                     <div>
-                        <h2 class="text-2xl font-bold">??????, ????? ??!</h2>
-                        <p class="text-gray-600">??????, ????????</p>
+                        <h2 class="text-2xl font-bold">नमस्ते, राहुल जी!</h2>
+                        <p class="text-gray-600">सिरोही, राजस्थान</p>
                     </div>
                     <div class="flex items-center space-x-4">
                         <button onclick="showCustomerSection('orders')" class="flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg">
@@ -943,7 +943,7 @@
     <div id="loginModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hide">
         <div class="bg-white rounded-xl p-8 w-full max-w-md mx-4">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold">????? ????</h2>
+                <h2 class="text-2xl font-bold">लॉगिन करें</h2>
                 <button onclick="hideModal('loginModal')" class="text-gray-500 hover:text-gray-700">
                     <i class="fas fa-times text-xl"></i>
                 </button>
@@ -961,14 +961,14 @@
                 <div id="customerLogin" class="login-type">
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
-                        <input type="tel" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Mobile number enter ????">
+                        <input type="tel" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Mobile number enter करें">
                     </div>
                     <button type="button" onclick="sendOTP()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Send OTP</button>
                     
                     <div id="otpSection" class="mt-4 hide">
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">OTP</label>
-                            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="OTP enter ????">
+                            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="OTP enter करें">
                         </div>
                         <button type="button" onclick="verifyOTP('customer')" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">Verify & Login</button>
                     </div>
@@ -978,11 +978,11 @@
                 <div id="vendorAdminLogin" class="login-type hide">
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                        <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Email enter ????">
+                        <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Email enter करें">
                     </div>
                     <div class="mb-6">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                        <input type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Password enter ????">
+                        <input type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Password enter करें">
                     </div>
                     <button type="button" onclick="loginVendorAdmin()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Login</button>
                 </div>
@@ -994,7 +994,7 @@
     <div id="vendorRegisterModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hide">
         <div class="bg-white rounded-xl p-8 w-full max-w-2xl mx-4 max-h-screen overflow-y-auto">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold">????? ???????????</h2>
+                <h2 class="text-2xl font-bold">वेंडर रजिस्ट्रेशन</h2>
                 <button onclick="hideModal('vendorRegisterModal')" class="text-gray-500 hover:text-gray-700">
                     <i class="fas fa-times text-xl"></i>
                 </button>
@@ -1004,11 +1004,11 @@
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-gray-700 text-sm font-bold mb-2">Business Name</label>
-                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="?????? ?? ???">
+                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="बिजनेस का नाम">
                     </div>
                     <div>
                         <label class="block text-gray-700 text-sm font-bold mb-2">Owner Name</label>
-                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="????? ?? ???">
+                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="मालिक का नाम">
                     </div>
                 </div>
                 
@@ -1038,7 +1038,7 @@
                 
                 <div>
                     <label class="block text-gray-700 text-sm font-bold mb-2">Address</label>
-                    <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="???? ???"></textarea>
+                    <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="पूरा पता"></textarea>
                 </div>
                 
                 <div>
@@ -1047,16 +1047,16 @@
                         <label class="border border-gray-300 rounded-lg p-4 cursor-pointer hover:bg-blue-50">
                             <input type="radio" name="plan" value="free" class="mb-2">
                             <div class="font-semibold">Free Plan</div>
-                            <div class="text-sm text-gray-600">?0/month</div>
+                            <div class="text-sm text-gray-600">₹0/month</div>
                         </label>
                         <label class="border border-yellow-300 rounded-lg p-4 cursor-pointer hover:bg-yellow-50 border-2">
                             <input type="radio" name="plan" value="premium" class="mb-2">
-                            <div class="font-semibold">?3500 Plan</div>
+                            <div class="font-semibold">₹3500 Plan</div>
                             <div class="text-sm text-gray-600">Popular</div>
                         </label>
                         <label class="border border-blue-300 rounded-lg p-4 cursor-pointer hover:bg-blue-50 border-2">
                             <input type="radio" name="plan" value="business" class="mb-2">
-                            <div class="font-semibold">?5000 Plan</div>
+                            <div class="font-semibold">₹5000 Plan</div>
                             <div class="text-sm text-gray-600">Premium</div>
                         </label>
                     </div>
@@ -1103,7 +1103,7 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-gray-700 text-sm font-bold mb-2">Price</label>
-                        <input type="number" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="? Price">
+                        <input type="number" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="₹ Price">
                     </div>
                     <div>
                         <label class="block text-gray-700 text-sm font-bold mb-2">Stock</label>
@@ -1145,7 +1145,7 @@
                         </label>
                         <label class="flex items-center">
                             <input type="radio" name="delivery" value="delivery" class="mr-3">
-                            <span>Sirohi Delivery (?20)</span>
+                            <span>Sirohi Delivery (₹20)</span>
                         </label>
                     </div>
                 </div>
@@ -1158,7 +1158,7 @@
                 <div class="border-t pt-4">
                     <div class="flex justify-between items-center text-lg font-bold">
                         <span>Total:</span>
-                        <span id="orderTotal">?450</span>
+                        <span id="orderTotal">₹450</span>
                     </div>
                 </div>
                 
@@ -1222,7 +1222,7 @@
                     <div class="flex items-center">
                         <i class="fas fa-motorcycle text-blue-600 mr-3"></i>
                         <div>
-                            <p class="font-semibold">???? (Delivery Boy)</p>
+                            <p class="font-semibold">राजू (Delivery Boy)</p>
                             <p class="text-sm text-gray-600">Vehicle: RJ14AB1234</p>
                         </div>
                         <button class="ml-auto bg-blue-600 text-white px-3 py-1 rounded text-sm">
@@ -1257,36 +1257,36 @@
         const vendors = [
             {
                 id: 1,
-                name: "??? ?????? ?????",
+                name: "राम किराना स्टोर",
                 category: "grocery",
                 rating: 4.5,
                 plan: "premium",
                 status: "active",
-                location: "???? ?????",
+                location: "सिटी सेंटर",
                 phone: "9876543210",
                 products: [
-                    {id: 1, name: "?????? ????", price: 80, stock: 50, image: ""},
-                    {id: 2, name: "??? ???", price: 120, stock: 30, image: ""},
+                    {id: 1, name: "बासमती चावल", price: 80, stock: 50, image: ""},
+                    {id: 2, name: "तूर दाल", price: 120, stock: 30, image: ""},
                 ]
             },
             {
                 id: 2,
-                name: "???? ?????????????",
+                name: "सोनू इलेक्ट्रीशियन",
                 category: "electrician",
                 rating: 4.8,
                 plan: "business",
                 status: "active",
-                location: "??? ?????",
+                location: "रेल बाजार",
                 phone: "9876543211"
             },
             {
                 id: 3,
-                name: "????? ?????? ?????",
+                name: "शर्मा मेडिकल स्टोर",
                 category: "medical",
                 rating: 4.3,
                 plan: "free",
                 status: "active",
-                location: "????? ???",
+                location: "कॉलेज रोड",
                 phone: "9876543212"
             }
         ];
@@ -1295,15 +1295,15 @@
             {
                 id: "ORD001",
                 vendorId: 1,
-                customerName: "????? ?????",
+                customerName: "राहुल शर्मा",
                 items: [
-                    {name: "?????? ????", quantity: 2, price: 160},
-                    {name: "??? ???", quantity: 1, price: 120}
+                    {name: "बासमती चावल", quantity: 2, price: 160},
+                    {name: "तूर दाल", quantity: 1, price: 120}
                 ],
                 total: 280,
                 status: "confirmed",
                 deliveryType: "delivery",
-                address: "123, ???? ?????",
+                address: "123, सिटी सेंटर",
                 timestamp: new Date()
             }
         ];
@@ -1386,7 +1386,7 @@
         }
 
         function verifyOTP(userType) {
-            currentUser = {name: "????? ?????", phone: "9876543210", type: userType};
+            currentUser = {name: "राहुल शर्मा", phone: "9876543210", type: userType};
             hideModal('loginModal');
             showView('customer');
             showNotification('Login successful!');
@@ -1399,7 +1399,7 @@
                 showView('admin');
                 loadAdminDashboard();
             } else {
-                currentUser = {name: "??? ?????? ?????", type: "vendor", vendorId: 1};
+                currentUser = {name: "राम किराना स्टोर", type: "vendor", vendorId: 1};
                 hideModal('loginModal');
                 showView('vendor');
                 loadVendorDashboard();
@@ -1450,7 +1450,7 @@
                 </div>
                 <div class="flex items-center mb-4">
                     <div class="flex text-yellow-400">
-                        ${'?'.repeat(Math.floor(vendor.rating))}${'?'.repeat(5 - Math.floor(vendor.rating))}
+                        ${'★'.repeat(Math.floor(vendor.rating))}${'☆'.repeat(5 - Math.floor(vendor.rating))}
                     </div>
                     <span class="ml-2 text-sm text-gray-600">(${vendor.rating})</span>
                 </div>
@@ -1513,7 +1513,7 @@
                 data: {
                     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                     datasets: [{
-                        label: 'Revenue (?)',
+                        label: 'Revenue (₹)',
                         data: [12000, 19000, 15000, 25000, 22000, 30000],
                         borderColor: 'rgb(59, 130, 246)',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
@@ -1536,7 +1536,7 @@
             new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['?5000 Plan', '?3500 Plan', 'Free Plan'],
+                    labels: ['₹5000 Plan', '₹3500 Plan', 'Free Plan'],
                     datasets: [{
                         data: [45, 89, 111],
                         backgroundColor: [
@@ -1576,7 +1576,7 @@
                         </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${vendor.category}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">?${vendor.plan === 'business' ? '5000' : vendor.plan === 'premium' ? '3500' : '0'}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">₹${vendor.plan === 'business' ? '5000' : vendor.plan === 'premium' ? '3500' : '0'}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">7 days left</td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${vendor.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
@@ -1632,7 +1632,7 @@
                         </div>
                         <h3 class="font-semibold text-lg mb-2">${product.name}</h3>
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-xl font-bold text-green-600">?${product.price}</span>
+                            <span class="text-xl font-bold text-green-600">₹${product.price}</span>
                             <span class="text-sm text-gray-600">Stock: ${product.stock}</span>
                         </div>
                         <div class="flex gap-2">
@@ -1672,14 +1672,14 @@
                             <p class="text-gray-600 text-sm">${vendor.location}</p>
                         </div>
                         <div class="flex text-yellow-400">
-                            ${'?'.repeat(Math.floor(vendor.rating))}
+                            ${'★'.repeat(Math.floor(vendor.rating))}
                         </div>
                     </div>
                     <div class="space-y-2 mb-4">
                         ${vendor.products ? vendor.products.slice(0, 2).map(product => 
                             `<div class="flex justify-between items-center">
                                 <span class="text-sm">${product.name}</span>
-                                <span class="text-sm font-semibold">?${product.price}</span>
+                                <span class="text-sm font-semibold">₹${product.price}</span>
                             </div>`
                         ).join('') : '<p class="text-sm text-gray-600">Service provider</p>'}
                     </div>
@@ -1710,7 +1710,7 @@
                         ${vendor.products.map(product => 
                             `<div class="flex justify-between items-center">
                                 <span>${product.name}</span>
-                                <span class="font-semibold">?${product.price}</span>
+                                <span class="font-semibold">₹${product.price}</span>
                             </div>`
                         ).join('')}
                     </div>
