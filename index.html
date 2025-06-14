@@ -111,7 +111,322 @@
             }
         }
     </style>
-</head>
+<meta charset="utf-8"/><meta content="#4F46E5" name="theme-color"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="default" name="apple-mobile-web-app-status-bar-style"/><meta content="सिरोही सेवा" name="apple-mobile-web-app-title"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+Devanagari:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><script src="https://cdn.jsdelivr.net/npm/firebase@9.22.0/firebase-app-compat.js"></script><script src="https://cdn.jsdelivr.net/npm/firebase@9.22.0/firebase-auth-compat.js"></script><script src="https://cdn.jsdelivr.net/npm/firebase@9.22.0/firebase-database-compat.js"></script><script src="https://cdn.jsdelivr.net/npm/firebase@9.22.0/firebase-firestore-compat.js"></script><script src="https://checkout.razorpay.com/v1/checkout.js"></script><script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO9W5u5KXuMKRo&amp;libraries=places"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script><style>
+        .hindi-font {
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #4F46E5;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .modal {
+            backdrop-filter: blur(5px);
+        }
+        
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4F46E5;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4F46E5, #7C3AED);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+        }
+        
+        .map-container {
+            height: 400px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .qr-code-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .real-time-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+        
+        .city-selector {
+            position: relative;
+            z-index: 100;
+        }
+        
+        .live-tracking-map {
+            height: 300px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .status-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .status-timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        
+        .status-step {
+            position: relative;
+            margin-bottom: 24px;
+        }
+        
+        .status-step::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 2px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #e5e7eb;
+        }
+        
+        .status-step.active::before {
+            background: #10b981;
+            border-color: #10b981;
+        }
+        
+        .vendor-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .vendor-badge.premium {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: white;
+        }
+        
+        .vendor-badge.featured {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+        }
+        
+        .amazon-style-card {
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .amazon-style-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: #d1d5db;
+        }
+        
+        .rating-stars {
+            color: #fbbf24;
+        }
+        
+        .price-tag {
+            font-weight: bold;
+            color: #b12704;
+        }
+        
+        .delivery-estimate {
+            color: #007600;
+            font-weight: 500;
+        }
+        
+        .sirohi-branding {
+            background: linear-gradient(135deg, #4F46E5, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+        
+        .admin-section {
+            display: none;
+        }
+        
+        .admin-section.active {
+            display: block;
+        }
+        
+        .vendor-section {
+            display: none;
+        }
+        
+        .vendor-section.active {
+            display: block;
+        }
+        
+        .delivery-section {
+            display: none;
+        }
+        
+        .delivery-section.active {
+            display: block;
+        }
+        
+        .filter-tag.active {
+            background: #4F46E5;
+            color: white;
+        }
+        
+        .masked-info {
+            background: #f3f4f6;
+            color: #6b7280;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover,
+        .upload-area.dragover {
+            border-color: #4F46E5;
+            background-color: #f8fafc;
+        }
+        
+        .star-rating {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+        
+        .star-rating .star {
+            cursor: pointer;
+            color: #d1d5db;
+            transition: color 0.2s ease;
+        }
+        
+        .star-rating .star.filled,
+        .star-rating .star:hover {
+            color: #fbbf24;
+        }
+        
+        .delivery-option {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .delivery-option.selected {
+            border-color: #4F46E5;
+            background-color: #f0f7ff;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            .tab-content {
+                display: block !important;
+            }
+            
+            .modal {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12px;
+            }
+            
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+        }
+    </style></head>
 <body class="bg-gray-50">
 <!-- Navigation -->
 <nav class="bg-white shadow-lg sticky top-0 z-50">
@@ -1677,5 +1992,146 @@
             showView('home');
         });
     </script>
-</body>
+<div class="notification bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg no-print" id="notification">
+<div class="flex items-center">
+<i class="fas fa-check-circle mr-2"></i>
+<span id="notificationText"></span>
+<button class="ml-4 text-white hover:text-gray-200" onclick="hideNotification()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+</div><div class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 no-print" id="cartSidebar">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold">Shopping Cart</h3>
+<button class="text-gray-500 hover:text-gray-700" onclick="toggleCart()">
+<i class="fas fa-times text-xl"></i>
+</button>
+</div>
+<div class="space-y-4 mb-6" id="cartItems">
+<!-- Cart items will be populated here -->
+</div>
+<div class="border-t pt-4">
+<!-- Delivery Options -->
+<div class="mb-4">
+<h4 class="font-bold mb-3">डिलीवरी विकल्प:</h4>
+<div class="space-y-2">
+<div class="delivery-option" onclick="selectDeliveryOption('delivery')">
+<div class="flex items-center">
+<input class="mr-3" name="deliveryOption" type="radio" value="delivery"/>
+<div>
+<div class="font-medium">होम डिलीवरी</div>
+<div class="text-sm text-gray-600">30-45 मिनट, ₹20 चार्ज</div>
+</div>
+</div>
+</div>
+<div class="delivery-option" onclick="selectDeliveryOption('pickup')">
+<div class="flex items-center">
+<input class="mr-3" name="deliveryOption" type="radio" value="pickup"/>
+<div>
+<div class="font-medium">सेल्फ पिकअप</div>
+<div class="text-sm text-gray-600">15-20 मिनट, फ्री</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center text-xl font-bold">
+<span>Total:</span>
+<span id="cartTotal">₹0</span>
+</div>
+<button class="w-full mt-4 btn-primary text-white py-3 rounded-lg font-medium" onclick="proceedToCheckout()">
+                    Checkout
+                </button>
+</div>
+</div>
+</div><script>
+// Customer Registration Validation
+function validateCustomerRegistrationForm() {
+    const form = document.getElementById("customerRegisterForm");
+    const inputs = form.querySelectorAll("input[required], select[required], textarea[required]");
+    for (const input of inputs) {
+        if (!input.value.trim()) {
+            alert("कृपया सभी फ़ील्ड भरें।");
+            input.focus();
+            return false;
+        }
+    }
+    return true;
+}
+
+// Vendor Registration Validation + Razorpay Payment Check
+function validateVendorRegistrationForm() {
+    const form = document.getElementById("vendorRegisterForm");
+    const inputs = form.querySelectorAll("input[required], select[required], textarea[required]");
+    for (const input of inputs) {
+        if (!input.value.trim()) {
+            alert("कृपया सभी फ़ील्ड भरें।");
+            input.focus();
+            return false;
+        }
+    }
+
+    // Razorpay payment integration
+    var options = {
+        "key": "rzp_test_YourKeyHere", // Replace with your Razorpay key
+        "amount": "50000", // Amount in paise = ₹500.00
+        "currency": "INR",
+        "name": "Sirohi Services",
+        "description": "Vendor Registration Fee",
+        "handler": function (response){
+            alert("पेमेंट सफल हुआ। Vendor रजिस्ट्रेशन पूरा किया जा रहा है।");
+            form.submit();
+        },
+        "prefill": {
+            "name": document.getElementById("vendorName").value,
+            "email": document.getElementById("vendorEmail").value
+        },
+        "theme": {
+            "color": "#4F46E5"
+        }
+    };
+    var rzp = new Razorpay(options);
+    rzp.open();
+    return false; // prevent form default submit
+}
+</script><script>
+// Initialize Firebase (replace these values with your actual config)
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+firebase.initializeApp(firebaseConfig);
+</script><script>
+// OTP login using Firebase Phone Auth (basic)
+function sendOTP(phoneInputId, recaptchaContainerId) {
+    const phoneNumber = document.getElementById(phoneInputId).value;
+    const appVerifier = new firebase.auth.RecaptchaVerifier(recaptchaContainerId, {
+        size: "invisible"
+    });
+    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+        .then(confirmationResult => {
+            window.confirmationResult = confirmationResult;
+            alert("OTP भेज दिया गया है।");
+        })
+        .catch(error => {
+            alert("OTP भेजने में त्रुटि: " + error.message);
+        });
+}
+
+function verifyOTP(otpInputId) {
+    const otpCode = document.getElementById(otpInputId).value;
+    window.confirmationResult.confirm(otpCode).then(result => {
+        alert("OTP सत्यापन सफल!");
+        const user = result.user;
+        // Proceed with login logic
+    }).catch(error => {
+        alert("गलत OTP या त्रुटि: " + error.message);
+    });
+}
+</script></body>
 </html>
