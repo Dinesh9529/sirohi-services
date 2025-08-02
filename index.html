@@ -1,7 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="hi">
 <head>
+<link
+ rel="stylesheet"
+  href="https://unpkg.com/leaflet/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 <meta charset="utf-8"/>
+<style>
+  .modal-body {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+</style>
+</head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Sirohi Services - Multi-Vendor Platform</title>
 <link rel="stylesheet" href="style.css" />
@@ -195,6 +208,19 @@
                 font-size: 11px;
             }
         }
+        #vendorMap {
+  z-index: 1 !important;
+}
+
+#editVendorModal {
+  z-index: 9999 !important;
+}
+
+#editVendorModal .bg-white {
+  position: relative;
+  z-index: 10000;
+}
+
     </style>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="otp-script.js" defer></script>
@@ -367,54 +393,102 @@
 </div>
 </section>
 <section class="py-16 bg-white">
-<div class="max-w-7xl mx-auto px-4">
-<h2 class="text-3xl font-bold text-center mb-12">वेंडर प्लान्स</h2>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="plan-card p-8 rounded-xl shadow-lg border-2 border-gray-200">
-<div class="text-center">
-<h3 class="text-2xl font-bold mb-4">FREE प्लान</h3>
-<div class="text-4xl font-bold text-green-600 mb-6">₹0<span class="text-lg text-gray-500">/महीना</span></div>
-<ul class="text-left space-y-3 mb-8">
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>₹100 प्रति लीड चार्ज लिया जाएगा</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>20% कमिशन प्रति ऑर्डर लिया जाएगा</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>बेसिक सपोर्ट</li>
-<li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>प्राइऑरिटी लिस्टिंग</li>
-<li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>कोई डिलीवरी बॉय उपलब्ध नहीं है</li>
-</ul>
-<button type="button" class="w-full bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700" onclick="selectPlan('free')">चुनें</button>
-</div>
-</div>
+    <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">वेंडर प्लान्स</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- FREE Plan -->
+<div class="plan-card p-8 rounded-xl shadow-lg border-2 border-gray-800 text-gray-800">
+    <div class="text-center">
+      <h3 class="text-2xl font-bold mb-4">FREE प्लान</h3>
+      <div class="text-4xl font-bold text-green-600 mb-6">₹0<span class="text-lg text-gray-500">/महीना</span></div>
+      <ul class="text-left space-y-3 mb-8">
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>₹200 प्रति लीड चार्ज</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>30% कमिशन प्रति ऑर्डर</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>बेसिक सपोर्ट</li>
+        <li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>प्रायोरिटी लिस्टिंग</li>
+        <li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>डिलीवरी बॉय नहीं</li>
+      </ul>
+      <button type="button" class="w-full bg-gray-800 text-white py-3 rounded-lg font-semibold hover:bg-gray-900" onclick="selectPlan('free')">चुनें</button>
+    </div>
+  </div>
+<!-- ₹1500 Plan -->
 <div class="premium-plan p-8 rounded-xl shadow-xl border-2 border-yellow-400 relative">
-<div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-<span class="bg-yellow-500 text-white px-4 py-1 rounded-full text-sm font-semibold">पॉपुलर</span>
-</div>
-<div class="text-center">
-<h3 class="text-2xl font-bold mb-4">₹3500 प्लान</h3>
-<div class="text-4xl font-bold mb-6">₹3500<span class="text-lg opacity-80">/महीना</span></div>
-<ul class="text-left space-y-3 mb-8 opacity-90">
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>₹50 प्रति लीड चार्ज लिया जाएगा</li>
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>10% कमिशन प्रति ऑर्डर लिया जाएगा</li>
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>प्राइऑरिटी सपोर्ट</li>
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>फीचर्ड लिस्टिंग</li>
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>डिलीवरी बॉय उपलब्ध है</li>
-</ul>
-<button type="button" class="w-full bg-white text-yellow-600 py-3 rounded-lg font-semibold hover:bg-gray-100" onclick="selectPlan('premium')">चुनें</button>
-</div>
-</div>
-<div class="business-plan p-8 rounded-xl shadow-xl">
-<div class="text-center">
-<h3 class="text-2xl font-bold mb-4">₹5000 प्लान</h3>
-<div class="text-4xl font-bold mb-6">₹5000<span class="text-lg opacity-80">/महीना</span></div>
-<ul class="text-left space-y-3 mb-8 opacity-90">
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>अनलिमिटेड ऑर्डर</li>
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>केवल 5% कमिशन प्रति ऑर्डर लिया जाएगा</li>
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>टॉप सपोर्ट</li>
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>प्रीमियम लिस्टिंग</li>
-<li class="flex items-center"><i class="fas fa-check mr-2"></i>डिलीवरी बॉय उपलब्ध है</li>
-</ul>
-<button type="button" class="w-full bg-white text-blue-600 py-3 rounded-lg font-semibold hover:bg-gray-100" onclick="selectPlan('business')">चुनें</button>
-</div>
-</div>
+    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+      <span class="bg-yellow-500 text-white px-4 py-1 rounded-full text-sm font-semibold">Starter</span>
+    </div>
+    <div class="text-center">
+      <h3 class="text-2xl font-bold mb-4">₹1500 प्लान</h3>
+      <div class="text-4xl font-bold mb-2">₹1500<span class="text-lg opacity-80">/महीना</span></div>
+      <select class="w-full border p-2 rounded text-black mb-4" onchange="updatePlanTotal('starter', 1500, this.value)">
+        <option value="3">3 महीने</option>
+        <option value="6">6 महीने</option>
+        <option value="9">9 महीने</option>
+        <option value="12">12 महीने</option>
+      </select>
+      <div id="starterTotal" class="text-lg font-bold mb-2">₹4500 कुल मूल्य</div>
+      <p id="starterSavingsText" class="text-sm text-yellow-100 mb-4">आप ₹0 बचा रहे हैं!</p>
+      <ul class="text-left space-y-3 mb-8 opacity-90">
+        <li class="flex items-center"><i class="fas fa-check mr-2"></i>₹150 प्रति लीड चार्ज</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2"></i>20% कमिशन प्रति ऑर्डर</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2"></i>बेसिक सपोर्ट</li>
+        <li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>प्रायोरिटी लिस्टिंग</li>
+        <li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>डिलीवरी बॉय नहीं</li>
+      </ul>
+      <button type="button" class="w-full bg-white text-yellow-600 py-3 rounded-lg font-semibold hover:bg-gray-100" onclick="selectPlan('starter')">चुनें</button>
+    </div>
+  </div>
+  <!-- ₹3500 Plan -->
+  <div class="business-plan p-8 rounded-xl shadow-xl border-2 border-green-700 text-white bg-green-900">
+    <div class="text-center">
+      <h3 class="text-2xl font-bold mb-4">₹3500 प्लान</h3>
+      <div class="text-4xl font-bold mb-2">₹3500<span class="text-lg opacity-80">/महीना</span></div>
+      <select class="w-full border p-2 rounded text-black mb-4" onchange="updatePlanTotal('premium', 3500, this.value)">
+        <option value="3">3 महीने</option>
+        <option value="6">6 महीने</option>
+        <option value="9">9 महीने</option>
+        <option value="12">12 महीने</option>
+      </select>
+      <div id="premiumTotal" class="text-lg font-bold mb-2">₹10,500 कुल मूल्य</div>
+      <p id="premiumSavingsText" class="text-sm text-green-300 mb-4">आप ₹0 बचा रहे हैं!</p>
+      <ul class="text-left space-y-3 mb-8 opacity-90">
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-green-300"></i>₹100 प्रति लीड चार्ज</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-green-300"></i>10% कमिशन प्रति ऑर्डर</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-green-300"></i>प्राइऑरिटी सपोर्ट</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-green-300"></i>फीचर्ड लिस्टिंग</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-green-300"></i>डिलीवरी बॉय उपलब्ध है</li>
+      </ul>
+      <button type="button" class="w-full bg-white text-green-900 py-3 rounded-lg font-semibold hover:bg-green-200" onclick="selectPlan('premium')">चुनें</button>
+    </div>
+  </div>
+<!-- ₹5000 Plan -->
+<div class="business-plan p-8 rounded-xl shadow-xl border-2 border-blue-700 text-white bg-blue-900">
+    <div class="text-center">
+      <h3 class="text-2xl font-bold mb-4">₹5000 प्लान</h3>
+      <div class="text-4xl font-bold mb-2">₹5000<span class="text-lg opacity-80">/महीना</span></div>
+  
+      <select class="w-full border p-2 rounded text-black mb-4" onchange="updatePlanTotal('business', 5000, this.value)">
+        <option value="3">3 महीने</option>
+        <option value="6">6 महीने</option>
+        <option value="9">9 महीने</option>
+        <option value="12">12 महीने</option>
+      </select>
+  
+      <div id="businessTotal" class="text-lg font-bold mb-2">₹15,000 कुल मूल्य</div>
+      <p id="businessSavingsText" class="text-sm text-blue-300 mb-4">आप ₹0 बचा रहे हैं!</p>
+  
+      <ul class="text-left space-y-3 mb-8 opacity-90">
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-blue-300"></i>₹50 प्रति लीड चार्ज</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-blue-300"></i>5% कमिशन प्रति ऑर्डर</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-blue-300"></i>टॉप सपोर्ट</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-blue-300"></i>प्रीमियम लिस्टिंग</li>
+        <li class="flex items-center"><i class="fas fa-check mr-2 text-blue-300"></i>डिलीवरी बॉय उपलब्ध है</li>
+      </ul>
+  
+      <button type="button"
+        class="w-full bg-white text-blue-900 py-3 rounded-lg font-semibold hover:bg-blue-200 transition"
+        <button type="button" ... onclick="selectPlan('business')">चुनें</button>
+    </div>
+  </div>
 </div>
 </div>
 </section>
@@ -483,8 +557,12 @@
 
 <div id="upgradeReminder" class="bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-3 rounded mb-4 hide">
   <p id="vendorExpiryInfo" class="text-sm text-gray-500 mb-4"></p>
-  <strong>आप Free Plan पर हैं:</strong> ₹100 प्रति लीड + 20% कमिशन लगता है। <br/>Paid प्लान लेकर priority listing, delivery support और कम commission पाएं! <br/>
+  <strong>आप Free Plan पर हैं:</strong> ₹200 प्रति लीड + 30% कमिशन लगता है। <br/>Paid प्लान लेकर priority listing, delivery support और कम commission पाएं! <br/>
 
+
+  <button type="button" onclick="payAndUpgradeVendor('starter')" class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 mt-3">
+    ₹1500 प्लान अपग्रेड करें
+  </button>
 <button type="button" onclick="payAndUpgradeVendor('premium')" class="bg-yellow-600 text-white px-3 py-1 rounded hover:bg-yellow-700 mt-3">
   ₹3500 प्लान अपग्रेड करें
 </button>
@@ -554,7 +632,7 @@
 
     </div> </div> <div class="view hide" id="adminDashboardView">
 
- <div class="max-w-7xl mx-auto px-4 py-8">
+         <div class="max-w-7xl mx-auto px-4 py-8">
       <h2 class="text-2xl font-bold mb-6 text-blue-700"><i class="fas fa-user-shield mr-2"></i>Admin Dashboard</h2>
       <h3 class="text-lg font-semibold mb-2">All Registered Users</h3>
       <select onchange="filterVendorList(this.value)" class="border p-2 rounded mb-4">
@@ -568,6 +646,9 @@
 
       <h3 class="text-lg font-semibold mb-2 mt-6">Pending Vendor Requests</h3>
       <ul id="pendingVendorList" class="list-disc list-inside text-yellow-600"></ul>
+      <h3 class="text-lg font-semibold mb-2 mt-6">Live Delivery Location</h3>
+<div id="vendorMap" class="h-96 w-full border mt-4 rounded-lg shadow"></div>
+
     </div>
   </div>
 
@@ -586,6 +667,7 @@
   <h3 class="text-lg font-semibold mb-2">My Orders</h3>
         <div id="deliveryOrdersContainer" class="space-y-3 text-sm text-gray-800">
            No orders assigned
+
         </div>
       </div>
     </div>
@@ -736,7 +818,7 @@
 <div class="flex mb-6 bg-gray-100 rounded-lg p-1">
 <button type="button" class="flex-1 py-2 px-4 rounded-md bg-blue-600 text-white transition duration-300" id="customerLoginTab">Customer</button>
 <button type="button" class="flex-1 py-2 px-4 rounded-md text-gray-600 transition duration-300" id="vendorLoginTab" >Vendor</button>
-<button type="button" class="flex-1 py-2 px-4 rounded-md text-gray-600 transition duration-300" id="adminLoginTab">Admin</button>
+<button type="button" class="flex-1 py-2 px-4 rounded-md text-gray-600 transition duration-300 hide" id="adminLoginTab">Admin</button>
 <button type="button" class="flex-1 py-2 px-4 rounded-md text-gray-600 transition duration-300" id="deliveryLoginTab">Delivery</button>
 </div>
 <form id="loginForm">
@@ -789,6 +871,7 @@
                 <i class="fas fa-times text-xl"></i>
             </button>
         </div>
+      
         <form class="space-y-4" id="vendorRegisterForm">
 
 <div id="vendorOtpSection" class="hide">
@@ -815,7 +898,8 @@
                 </div>
                 <div>
                     <label class="block text-gray-700 text-sm font-bold mb-2">Phone</label>
-                     <input class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Phone Number" type="tel" id="phone" required/>
+                    <input class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Phone Number" type="tel" id="vendorPhone" required/>
+                 
                 </div>
             </div>
             <div>
@@ -853,6 +937,11 @@
                          <div class="font-semibold">Free Plan</div>
                          <div class="text-sm text-gray-600">₹0/month</div>
                     </label>
+                    <label class="border border-green-300 rounded-lg p-4 cursor-pointer hover:bg-green-50 border-2" onclick="selectPlanInModal('starter')">
+                        <input class="mb-2" name="plan" type="radio" value="premium" id="starterPlan"/>
+                        <div class="font-semibold">₹1500 Plan</div>
+                       <div class="text-sm text-gray-600">Basic</div>
+                   </label>
                     <label class="border border-yellow-300 rounded-lg p-4 cursor-pointer hover:bg-yellow-50 border-2" onclick="selectPlanInModal('premium')">
                          <input class="mb-2" name="plan" type="radio" value="premium" id="premiumPlan"/>
                          <div class="font-semibold">₹3500 Plan</div>
@@ -992,36 +1081,151 @@
 <i class="fas fa-times text-xl"></i>
 </button>
 </div>
-<form class="space-y-4" id="addProductForm">
-<div>
-  <label class="block text-gray-700 text-sm font-bold mb-2">प्रोडक्ट की इमेज *</label>
-  <input type="file" accept="image/*" id="productImage" required class="w-full p-2 border rounded" />
-</div>
-<div>
-  <label class="block text-gray-700 text-sm font-bold mb-2">वीडियो लिंक (YouTube या MP4)</label>
-  <input type="text" id="productVideo" placeholder="https://..." class="w-full p-2 border rounded" />
-</div>
+<!-- 📦 Add Product Form -->
+<!-- Include this inside your modal -->
+<form id="addProductForm" class="space-y-4 p-4">
+  <div class="modal-body grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- Left column -->
+    <div>
+      <label class="block text-sm font-bold mb-1">प्रोडक्ट की इमेज *</label>
+      <input type="file" accept="image/*" id="productImage" required class="w-full border p-2 rounded" />
+    </div>
 
-<div>
-<label class="block text-gray-700 text-sm font-bold mb-2">प्रोडक्ट का नाम *</label>
-<input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="प्रोडक्ट का नाम" type="text" id="productName" required/>
-</div>
-<div>
-<label class="block text-gray-700 text-sm font-bold mb-2">कीमत (₹) *</label>
-<input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="कीमत" type="number" id="productPrice" required/>
-</div>
-<div>
-<label class="block text-gray-700 text-sm font-bold mb-2">स्टॉक *</label>
-<input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="स्टॉक की मात्रा" type="number" id="productStock" required/>
-</div>
-<div>
-<label class="block text-gray-700 text-sm font-bold mb-2">विवरण</label>
-<textarea class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="प्रोडक्ट का विवरण" rows="3" id="productDescription"></textarea>
-</div>
-<button type="button" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300" onclick="addProduct()">प्रोडक्ट जोड़ें</button>
+    <div>
+      <label class="block text-sm font-bold mb-1">कैटेगरी *</label>
+      <select name="category" required class="w-full border p-2 rounded">
+        <option value="kirana">Kirana</option>
+        <option value="kapda">Kapda</option>
+      </select>
+    </div>
+
+    <!-- Right column -->
+    <div>
+      <label class="block text-sm font-bold mb-1">प्रोडक्ट का नाम *</label>
+      <input type="text" id="productName" placeholder="नाम" required class="w-full border p-2 rounded" />
+    </div>
+
+    <div>
+      <label class="block text-sm font-bold mb-1">कीमत (₹) *</label>
+      <input type="number" id="productPrice" placeholder="कीमत" required class="w-full border p-2 rounded" />
+    </div>
+
+    <div>
+      <label class="block text-sm font-bold mb-1">स्टॉक *</label>
+      <input type="number" id="productStock" placeholder="स्टॉक की मात्रा" required class="w-full border p-2 rounded" />
+    </div>
+
+    <div>
+      <label class="block text-sm font-bold mb-1">विवरण</label>
+      <textarea id="productDescription" rows="3" placeholder="प्रोडक्ट का विवरण" class="w-full border p-2 rounded"></textarea>
+    </div>
+  </div>
+
+  <div class="pt-4">
+    <button type="button" onclick="addProduct()" class="w-full bg-green-600 text-white py-3 rounded font-semibold hover:bg-green-700">
+      प्रोडक्ट जोड़ें
+    </button>
+  </div>
 </form>
-</div>
-</div>
+
+<!-- 📦 Product Listing Container -->
+<div id="productList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"></div>
+
+<!-- 📜 JavaScript -->
+<script>
+// 🔄 Add Single Product
+function addProduct() {
+  console.log("🟢 Product form submission triggered");
+
+  const name = document.getElementById('productName').value.trim();
+  const price = parseInt(document.getElementById('productPrice').value);
+  const stock = parseInt(document.getElementById('productStock').value);
+  const description = document.getElementById('productDescription').value.trim();
+  const imageFile = document.getElementById('productImage').files[0];
+
+  if (!name || !price || !stock || !imageFile) {
+    alert('कृपया सभी आवश्यक फील्ड भरें');
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('price', price);
+  formData.append('stock', stock);
+  formData.append('description', description);
+  formData.append('image', imageFile);
+  formData.append('vendor_id', currentUser.id); // ✅ Vendor info भेजना ज़रूरी
+
+  fetch('https://sirohi-backend.onrender.com/api/products', {
+    method: 'POST',
+    body: formData
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert('✅ प्रोडक्ट सफलतापूर्वक जोड़ा गया!');
+      document.getElementById('addProductForm').reset();
+      loadVendorProducts();
+    })
+    .catch(err => {
+      console.error('❌ Error:', err);
+      alert('⚠️ कुछ गड़बड़ हो गई!');
+    });
+}
+
+// 🔁 Upload Multiple Products (Batch utility)
+function uploadProducts(productsArray) {
+  productsArray.forEach(product => {
+    const formData = new FormData();
+    formData.append('name', product.name);
+    formData.append('price', product.price);
+    formData.append('stock', product.stock);
+    formData.append('description', product.description);
+    formData.append('image', product.image); // File object
+    formData.append('vendor_id', currentUser.id);
+
+    fetch('https://sirohi-backend.onrender.com/api/products', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log("✅ Uploaded:", data.name);
+    })
+    .catch(err => console.error('❌ Batch Upload Error:', err));
+  });
+}
+
+// 📥 Load & Show Vendor Products
+function loadVendorProducts() {
+  fetch(`https://sirohi-backend.onrender.com/api/vendor-products?vendor_id=${currentUser.id}`)
+    .then(res => res.json())
+    .then(products => {
+      const container = document.getElementById('productList');
+      container.innerHTML = '';
+      products.forEach(renderProductCard);
+    })
+    .catch(err => console.error('❌ Load error:', err));
+}
+
+// 🎨 Render One Product Card
+function renderProductCard(product) {
+  const container = document.getElementById('productList');
+
+  const card = document.createElement('div');
+  card.className = 'border p-4 rounded shadow hover:shadow-lg transition';
+
+  card.innerHTML = `
+    <img src="${product.image_url}" alt="${product.name}" class="w-full h-40 object-cover rounded mb-3" />
+    <h2 class="text-lg font-semibold">${product.name}</h2>
+    <p class="text-gray-600">₹${product.price}</p>
+    <p class="text-sm text-gray-500">स्टॉक: ${product.stock}</p>
+    <p class="text-sm mt-2">${product.description || ''}</p>
+  `;
+
+  container.appendChild(card);
+}
+</script>
+
 
 <div class="notification hide" id="notification">
 <div class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
@@ -1450,59 +1654,57 @@ function showView(viewName) {
   const users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
   const email = document.getElementById('vendorEmail').value;
   const password = document.getElementById('vendorPassword').value;
-  
+
   if (!email || !password) {
-      showNotification('कृपया ईमेल और पासवर्ड दर्ज करें', 'error');
-      return;
+    showNotification('कृपया ईमेल और पासवर्ड दर्ज करें', 'error');
+    return;
   }
 
   if (currentUserType === 'admin') {
-      if (email === 'admin@sirohi.com' && password === 'admin123') {
-          currentUser = { name: "Admin", type: "admin", email: email };
-          updateUserInterface();
-          hideModal('loginModal');
-          showView('dashboard');
-          showNotification("Welcome Admin!");
-      } else {
-          showNotification("गलत admin credentials!", 'error');
-      }
-      return;
-  }
-
-  if (currentUserType === 'vendor') {
-      const vendorUser = users.find(u => u.email === email && u.password === password && u.type === 'vendor');
-      
-      if (!vendorUser) {
-          showNotification('ईमेल या पासवर्ड गलत है।', 'error');
-          return;
-      }
-
-      if (vendorUser.status === 'expired') {
-          showNotification('आपका प्लान expire हो गया है — upgrade करने के लिए प्लान चुनें', 'error');
-          showModal('vendorRegisterModal'); 
-          return;
-      }
-
-      if (vendorUser.status !== 'active') {
-          showNotification('आपका अकाउंट अभी तक एडमिन द्वारा अप्रूव नहीं किया गया है', 'error');
-          return;
-      }
-
-      currentUser = {
-          id: vendorUser.id,
-          name: vendorUser.businessName,
-          type: "vendor",
-          email: vendorUser.email,
-          category: vendorUser.category,
-          plan: vendorUser.plan,
-          registrationDate: vendorUser.registrationDate
-      };
+    if (email === 'admin@sirohi.com' && password === 'admin123') {
+      currentUser = { name: "Admin", type: "admin", email: email };
       updateUserInterface();
       hideModal('loginModal');
-      showView('dashboard');
-      showNotification(`नमस्ते ${currentUser.name}, आपका लॉगिन सफल हुआ!`);
+      showView(currentUser.type === 'admin' ? 'adminDashboardView' : 'dashboard');
+      showNotification("Welcome Admin!");
+      initAdminMap();
+    } else {
+      showNotification("गलत admin credentials!", 'error');
+    }
+    return;
   }
+
+  // ✅ Vendor login logic yahaan likha jaaye
+  const vendorUser = users.find(
+    u => u.email === email && u.password === password && u.type === 'vendor'
+  );
+
+  if (!vendorUser) {
+    showNotification('ईमेल या पासवर्ड गलत है।', 'error');
+    return;
+  }
+
+  if (vendorUser.status === 'expired') {
+    showNotification('आपका प्लान expire हो गया है — upgrade करें', 'error');
+    showModal('vendorRegisterModal');
+    return;
+  }
+
+  currentUser = {
+    id: vendorUser.id,
+    name: vendorUser.businessName,
+    type: "vendor",
+    email: vendorUser.email,
+    category: vendorUser.category,
+    plan: vendorUser.plan,
+    registrationDate: vendorUser.registrationDate
+  };
+  updateUserInterface();
+  hideModal('loginModal');
+  showView('dashboard');
+  showNotification(`नमस्ते ${currentUser.name}, आपका लॉगिन सफल हुआ!`);
 }
+
 
 
         function updateUserInterface() {
@@ -1525,12 +1727,14 @@ function showView(viewName) {
         }
 
         function logout() {
-            currentUser = null;
-            currentUserType = null;
-            updateUserInterface();
-            showView('home');
-            showNotification('आपका लॉगआउट सफल हुआ');
-        }
+  currentUser = null;
+  currentUserType = null;
+  localStorage.removeItem('isAdminAccess'); // ✅ Yeh line add karo
+  updateUserInterface();
+  showView('home');
+  showNotification('आपका लॉगआउट सफल हुआ');
+}
+
 
         // Dashboard functionality
         function switchDashboardTab(tabName) {
@@ -1913,29 +2117,51 @@ function showView(viewName) {
   loadVendorOrders(); // Reload orders
         }
 
-        function loadVendorProducts() {
-            const vendorProductsContainer = document.getElementById('vendorProductsContainer');
-            // Get products for current vendor
-            const currentVendor = vendors.find(v => v.id === currentUser.id);
-            const myProducts = currentVendor ? currentVendor.products : [];
+        function createVendorProductCard(product) {
+  const card = document.createElement('div');
+  card.className = 'border p-4 rounded shadow mb-4';
 
-            if (myProducts.length === 0) {
-                vendorProductsContainer.innerHTML = `
-                    <div class="text-center py-8 text-gray-500">
-                        <i class="fas fa-boxes text-4xl mb-4"></i>
-                        <p>अभी तक कोई प्रोडक्ट नहीं जोड़ा गया है</p>
-                    </div>
-                `;
-                return;
-            }
+  if (product.image) {
+    const img = document.createElement('img');
+    img.src = product.image;
+    img.alt = product.name;
+    img.className = 'w-full h-48 object-cover mb-2';
+    card.appendChild(img);
+  }
 
-            vendorProductsContainer.innerHTML = '';
-            myProducts.forEach(product => {
-                const productCard = createVendorProductCard(product);
-                vendorProductsContainer.appendChild(productCard);
-            });
-        }
+  const title = document.createElement('h3');
+  title.textContent = product.name;
+  title.className = 'text-lg font-bold';
+  card.appendChild(title);
 
+  const price = document.createElement('p');
+  price.textContent = `₹${product.price}`;
+  price.className = 'text-green-600 font-semibold';
+  card.appendChild(price);
+
+  if (currentUser?.type === 'vendor') {
+    const btnGroup = document.createElement('div');
+    btnGroup.className = 'mt-3 flex gap-3';
+
+    const editBtn = document.createElement('button');
+    editBtn.textContent = '✏️ Edit';
+    editBtn.className = 'bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600';
+    editBtn.onclick = () => editProduct(product.id);
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '🗑️ Delete';
+    deleteBtn.className = 'bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600';
+    deleteBtn.onclick = () => deleteProduct(product.id);
+
+    btnGroup.appendChild(editBtn);
+    btnGroup.appendChild(deleteBtn);
+    card.appendChild(btnGroup);
+  }
+
+  return card;
+}
+
+        
         function createVendorProductCard(product) {
             const div = document.createElement('div');
             div.className = 'product-card';
@@ -1963,52 +2189,30 @@ function showView(viewName) {
             return div;
         }
 
-        function addProduct() {
-            const name = document.getElementById('productName').value.trim();
-            const price = parseInt(document.getElementById('productPrice').value);
-            const stock = parseInt(document.getElementById('productStock').value);
-            const description = document.getElementById('productDescription').value.trim();
-            if (!name || !price || !stock) {
-                showNotification('कृपया सभी आवश्यक फील्ड भरें', 'error');
-                return;
-            }
-
-            const imageInput = document.getElementById('productImage');
-            const videoLink = document.getElementById('productVideo').value.trim();
-const imageURL = imageInput.files[0] ? URL.createObjectURL(imageInput.files[0]) : '';
-            const newProduct = {
-                id: Date.now(),
-                name: name,
-                price: price,
-                stock: stock,
-                description: description
-             };
-            // Add to vendor's products
-            const vendorIndex = vendors.findIndex(v => v.id === currentUser.id);
-            if (vendorIndex !== -1) {
-                vendors[vendorIndex].products.push(newProduct);
-            }
-
-            hideModal('addProductModal');
-            showNotification('प्रोडक्ट सफलतापूर्वक जोड़ा गया!');
-            loadVendorProducts();
-        }
+        
 
         function editProduct(productId) {
-            showNotification('प्रोडक्ट एडिट करने की सुविधा जल्द ही आएगी');
-        }
+  alert('⚙️ प्रोडक्ट एडिट करने की सुविधा जल्द आ रही है');
+}
+
 
         function deleteProduct(productId) {
-            if (confirm('क्या आप इस प्रोडक्ट को डिलीट करना चाहते हैं?')) {
-                const vendorIndex = vendors.findIndex(v => v.id === currentUser.id);
-                if (vendorIndex !== -1) {
-                    vendors[vendorIndex].products = vendors[vendorIndex].products.filter(p => p.id !== productId);
-                }
+  if (!confirm('क्या आप इस प्रोडक्ट को डिलीट करना चाहते हैं?')) return;
 
-                showNotification('प्रोडक्ट डिलीट कर दिया गया');
-                loadVendorProducts();
-            }
-        }
+  fetch(`https://sirohi-backend.onrender.com/api/products/${productId}`, {
+    method: 'DELETE'
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert('🗑️ प्रोडक्ट डिलीट कर दिया गया!');
+    loadVendorProducts();
+  })
+  .catch(err => {
+    console.error('❌ Error:', err);
+    alert('⚠️ डिलीट नहीं हो पाया');
+  });
+}
+
 
         // Privacy-protected contact functions
         function contactVendorSecure(vendorId) {
@@ -2110,7 +2314,7 @@ const imageURL = imageInput.files[0] ? URL.createObjectURL(imageInput.files[0]) 
         function registerVendor() {
              // 🔻 OTP Logic Start — INSERT यह block
   if (vendorStep === 'initial') {
-    const phone = document.getElementById('phone').value.trim();
+    const phone = document.getElementById('vendorPhone').value.trim();
     if (!phone || phone.length !== 10) {
       showNotification('कृपया सही फोन नंबर दर्ज करें', 'error');
       return;
@@ -2162,7 +2366,7 @@ const imageURL = imageInput.files[0] ? URL.createObjectURL(imageInput.files[0]) 
             const businessName = document.getElementById('businessName').value.trim();
             const ownerName = document.getElementById('ownerName').value.trim();
             const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
+            const phone = document.getElementById('vendorPhone').value.trim();
             const category = document.getElementById('category').value;
             const address = document.getElementById('address').value.trim();
             const selectedPlanInput = document.querySelector('input[name="plan"]:checked');
@@ -2335,12 +2539,19 @@ const imageURL = imageInput.files[0] ? URL.createObjectURL(imageInput.files[0]) 
         }
 
         // Initialize app
-        document.addEventListener('DOMContentLoaded', function() {
-            showView('home');
-            updateUserInterface();
-            initializeDragAndDrop();
+        document.addEventListener('DOMContentLoaded', function () {
+  showView('home');
+  updateUserInterface();
+  initializeDragAndDrop();
 
-            // ✅ FIX: Bind event listeners after DOM is loaded
+  // 🔑 Delay ke saath admin unlock check
+  setTimeout(() => {
+    if (localStorage.getItem('isAdminAccess') === 'true') {
+      document.getElementById('adminLoginTab')?.classList.remove('hide');
+    }
+  }, 50); // 50ms mein DOM + bindings donon safe ho jaate hain
+    
+           // ✅ FIX: Bind event listeners after DOM is loaded
             document.getElementById('registerBtn')?.addEventListener('click', registerCustomer);
             document.getElementById('registerButton')?.addEventListener('click', registerVendor);
             document.getElementById('customerLoginTab')?.addEventListener('click', () => switchLoginType('customer'));
@@ -2561,26 +2772,73 @@ const imageURL = imageInput.files[0] ? URL.createObjectURL(imageInput.files[0]) 
         }
         
         function approveVendor(email) {
-          const users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
-          const vendor = users.find(u => u.email === email && u.type === 'vendor');
-          if (vendor) {
-            vendor.status = 'active';
-            vendors.push({
-              id: vendor.id,
-              name: vendor.businessName,
-              category: vendor.category,
-              plan: vendor.plan,
-              status: 'active',
-              email: vendor.email,
-              location: vendor.address,
-              rating: 4.0,
-              products: []
-            });
-            localStorage.setItem('registeredUsers', JSON.stringify(users));
-            alert(`${vendor.businessName} को approval दे दिया गया`);
-            showAdminDashboard();
-          }
-        }
+  const users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+  const vendor = users.find(u => u.email === email && u.type === 'vendor');
+  if (vendor) {
+    vendor.status = 'active';
+    vendors.push({
+      id: vendor.id,
+      name: vendor.businessName,
+      category: vendor.category,
+      plan: vendor.plan,
+      status: 'active',
+      email: vendor.email,
+      location: vendor.address,
+      rating: 4.0,
+      products: []
+    });
+    localStorage.setItem('registeredUsers', JSON.stringify(users));
+    alert(`${vendor.businessName} को approval दे दिया गया`);
+    showAdminDashboard();
+  }
+}
+// ✏️ Edit Vendor Function
+function editVendor(email) {
+  const users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+  const vendor = users.find(u => u.email === email && u.type === 'vendor');
+  if (vendor) {
+    document.getElementById('editVendorEmail').value = vendor.email;
+    document.getElementById('editBusinessName').value = vendor.businessName;
+    document.getElementById('editCategory').value = vendor.category;
+    document.getElementById('editPhone').value = vendor.phone;
+    document.getElementById('editAddress').value = vendor.address;
+    showModal('editVendorModal');
+  }
+}
+
+// 💾 Update Vendor Function
+function updateVendor() {
+  const users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+  const email = document.getElementById('editVendorEmail').value;
+  const vendor = users.find(u => u.email === email && u.type === 'vendor');
+  if (!vendor) {
+    alert("Vendor not found!");
+    return;
+  }
+
+  vendor.businessName = document.getElementById('editBusinessName').value.trim();
+  vendor.category = document.getElementById('editCategory').value.trim();
+  vendor.phone = document.getElementById('editPhone').value.trim();
+  vendor.address = document.getElementById('editAddress').value.trim();
+
+  localStorage.setItem('registeredUsers', JSON.stringify(users));
+  showNotification(`${vendor.businessName} का डेटा अपडेट हो गया ✅`);
+  hideModal('editVendorModal');
+  showAdminDashboard();
+}
+
+// 🗑️ Delete Vendor Function
+function deleteVendor(email) {
+  if (!confirm("क्या आप वाकई में इस वेंडर को डिलीट करना चाहते हैं?")) return;
+
+  let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+  users = users.filter(u => !(u.email === email && u.type === 'vendor'));
+  localStorage.setItem('registeredUsers', JSON.stringify(users));
+
+  alert(`Vendor ${email} को डिलीट कर दिया गया`);
+  showAdminDashboard(); // Refresh list
+}
+
 
         function approveDeliveryUser(email) {
             const users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
@@ -2595,10 +2853,18 @@ const imageURL = imageInput.files[0] ? URL.createObjectURL(imageInput.files[0]) 
 </script>
 
 
-<div class="flex gap-4 mb-4">
-  <button type="button" onclick="downloadVendorCSV()" class="bg-blue-600 text-white px-4 py-2 rounded">📥 Export Vendors</button>
-  <button type="button" onclick="downloadDeliveryCSV()" class="bg-green-600 text-white px-4 py-2 rounded">📥 Export Delivery Boys</button>
+<div id="adminExportButtons" class="hidden">
+  <button onclick="downloadVendorCSV()" class="bg-blue-600 text-white px-4 py-2 rounded">📤 Export Vendors</button>
+  <button onclick="downloadDeliveryCSV()" class="bg-green-600 text-white px-4 py-2 rounded">📤 Export Delivery Boys</button>
 </div>
+<script>
+  // जब page लोड हो जाए या login हो चुका हो
+  document.addEventListener('DOMContentLoaded', function () {
+    if (currentUser && currentUser.role === 'admin') {
+      document.getElementById('adminExportButtons').classList.remove('hidden');
+    }
+  });
+</script>
 
 <script>
 function downloadVendorCSV() {
@@ -2670,25 +2936,6 @@ function simulateLeadBilling() {
 }
 </script>
 
-<div id="vendorMap" class="h-96 w-full border mt-4"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-<script>
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("vendorMap"), {
-    zoom: 12,
-    center: { lat: 24.8849, lng: 72.8586 } // Default to Sirohi
-  });
-  vendors.forEach(vendor => {
-    const marker = new google.maps.Marker({
-      position: { lat: 24.8849, lng: 72.8586 }, // TODO: Geocode vendor.address
-      map,
-      title: vendor.name
-    });
-  });
-}
-</script>
-
-
 <script>
 // 🔧 (1) Razorpay Payment Success पर WhatsApp Unlock करें
 function markOrderPaid(newOrder) {
@@ -2749,7 +2996,11 @@ function filterVendorList(filter) {
   users.forEach(u => {
     if (u.type === 'vendor' && (filter === 'all' || u.status === filter)) {
       const item = document.createElement('li');
-      item.textContent = `${u.businessName} – ${u.status}`;
+      item.innerHTML = `
+        ${u.businessName} – ${u.status}
+        <button onclick="editVendor('${u.email}')" class="ml-2 px-2 py-1 bg-yellow-500 text-white text-xs rounded">Edit</button>
+        <button onclick="deleteVendor('${u.email}')" class="ml-2 px-2 py-1 bg-red-600 text-white text-xs rounded">Delete</button>
+      `;
       list.appendChild(item);
     }
   });
@@ -2855,8 +3106,6 @@ function markDelivered(orderId) {
     loadDeliveryDashboard();
   }
 }
-
-
 function createVendorProductCard(product) {
   const card = document.createElement('div');
   card.className = 'border p-4 rounded shadow mb-4';
@@ -2870,28 +3119,6 @@ function createVendorProductCard(product) {
     card.appendChild(img);
   }
 
-  // Video (if available)
-  if (product.video) {
-    const videoWrapper = document.createElement('div');
-    videoWrapper.className = 'mb-2';
-    if (product.video.includes('youtube.com') || product.video.includes('youtu.be')) {
-      const iframe = document.createElement('iframe');
-      iframe.src = product.video;
-      iframe.width = "100%";
-      iframe.height = "200";
-      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      iframe.allowFullscreen = true;
-      videoWrapper.appendChild(iframe);
-    } else {
-      const video = document.createElement('video');
-      video.src = product.video;
-      video.controls = true;
-      video.className = 'w-full h-48';
-      videoWrapper.appendChild(video);
-    }
-    card.appendChild(videoWrapper);
-  }
-
   const title = document.createElement('h3');
   title.textContent = product.name;
   title.className = 'text-lg font-bold';
@@ -2902,8 +3129,29 @@ function createVendorProductCard(product) {
   price.className = 'text-green-600 font-semibold';
   card.appendChild(price);
 
+  // Vendor buttons (Edit/Delete)
+  if (currentUser?.type === 'vendor') {
+    const btnGroup = document.createElement('div');
+    btnGroup.className = 'mt-3 flex gap-3';
+
+    const editBtn = document.createElement('button');
+    editBtn.textContent = '✏️ Edit';
+    editBtn.className = 'bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600';
+    editBtn.onclick = () => editProduct(product.id);
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '🗑️ Delete';
+    deleteBtn.className = 'bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600';
+    deleteBtn.onclick = () => deleteProduct(product.id);
+
+    btnGroup.appendChild(editBtn);
+    btnGroup.appendChild(deleteBtn);
+    card.appendChild(btnGroup);
+  }
+
   return card;
 }
+
 </script>
 
 <script>
@@ -2923,7 +3171,210 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <script src="otp-script.js"></script>
+
+<script>
+function initAdminMap() {
+    const map = L.map('vendorMap').setView([24.8849, 72.8586], 13);
+  
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+    }).addTo(map);
+  
+    L.marker([24.8849, 72.8586])
+      .addTo(map)
+      .bindPopup("📍 Delivery Admin View")
+      .openPopup();
+  }
+</script>
+  
+  <!-- 🔐 Admin Unlock Modal (HTML block) -->
+<div id="adminUnlockModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hide z-50">
+  <div class="bg-white p-6 rounded shadow w-full max-w-xs">
+    <h2 class="text-xl font-bold mb-4 text-blue-700">🔐 Admin Unlock</h2>
+    <input id="adminSecretCode" type="password" class="border p-2 rounded w-full mb-4" placeholder="Enter Admin Code">
+    <button onclick="verifyAdminUnlockCode()" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Unlock</button>
+  </div>
+</div>
+
+<script>
+// ✅ Yeh pura JS block theek hai
+document.addEventListener('keydown', (e) => {
+  if (e.shiftKey && e.key === 'A') {
+    document.getElementById('adminUnlockModal')?.classList.remove('hide');
+  }
+});
+// 📌 This function handles:
+// 1. Validating the admin unlock code
+// 2. Saving access flag in localStorage
+// 3. Immediately showing admin tab on success (for current session)
+//    -> On future reloads, visibility is handled in DOMContentLoaded block
+
+function verifyAdminUnlockCode() {
+  const code = document.getElementById('adminSecretCode').value;
+  if (code === 'sirohi@admin') {
+    localStorage.setItem('isAdminAccess', 'true');
+    document.getElementById('adminUnlockModal')?.classList.add('hide');
+    document.getElementById('adminLoginTab')?.classList.remove('hide');
+    document.getElementById('adminSecretCode').value = '';
+    showNotification('✅ Admin login unlocked', 'success');
+  } else {
+    showNotification('❌ गलत unlock code', 'error');
+  }
+}
+
+</script>
+  <!-- 🛠️ Edit Vendor Modal -->
+  <div id="editVendorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hide">
+    <div class="bg-white rounded-xl p-6 w-full max-w-md mx-4">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-blue-700">🛠️ Vendor Edit Panel</h2>
+        <button onclick="hideModal('editVendorModal')" class="text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+      <form id="editVendorForm" class="space-y-4">
+        <input type="hidden" id="editVendorEmail" />
+        <div>
+          <label class="block text-gray-700 text-sm mb-1">Business Name</label>
+          <input type="text" id="editBusinessName" class="w-full border p-2 rounded" />
+        </div>
+        <div>
+          <label class="block text-gray-700 text-sm mb-1">Category</label>
+          <input type="text" id="editCategory" class="w-full border p-2 rounded" />
+        </div>
+        <div>
+          <label class="block text-gray-700 text-sm mb-1">Phone</label>
+          <input type="tel" id="editPhone" class="w-full border p-2 rounded" />
+        </div>
+        <div>
+          <label class="block text-gray-700 text-sm mb-1">Address</label>
+          <textarea id="editAddress" class="w-full border p-2 rounded"></textarea>
+        </div>
+        <button type="button" onclick="updateVendor()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+          💾 Update Vendor
+        </button>
+      </form>
+    </div>
+  </div>
+  
+
+</script>
+<script>
+  
+    function updatePlanTotal(planKey, basePrice, duration) {
+    const flatDiscounts = { 3: 0, 6: 1000, 9: 2000, 12: 3000 };
+    const discount = flatDiscounts[duration] || 0;
+    const total = basePrice * duration;
+    const finalAmount = total - discount;
+  
+    document.getElementById(`${planKey}Total`).textContent = `₹${finalAmount} कुल मूल्य`;
+    document.getElementById(`${planKey}SavingsText`).textContent = `आप ₹${discount} बचा रहे हैं!`;
+  
+    // ✅ Save selected duration for use in registration
+    window.selectedPlanDuration = duration;
+    window.selectedPlanAmount = finalAmount;
+  }
+    </script>
+  
+  <script>
+  function selectPlan(planType) {
+    showModal('vendorRegisterModal');
+    setTimeout(() => {
+      selectPlanInModal(planType);
+  
+      // Hide all plan radio buttons
+      ['free', 'starter', 'premium', 'business'].forEach(p => {
+        const el = document.getElementById(p + 'Plan');
+        if (el) el.closest('label').classList.add('hide');
+      });
+  
+      // Show only selected plan
+      const selected = document.getElementById(planType + 'Plan');
+      if (selected) selected.closest('label').classList.remove('hide');
+  
+      // Remove old summary if exists
+      const oldSummary = document.getElementById('planSummary');
+      if (oldSummary) oldSummary.remove();
+  
+      // Calculate fallback duration/amount if not set
+      const duration = window.selectedPlanDuration || 3;
+      const amount = window.selectedPlanAmount || (
+        planType === 'starter' ? 1500 * duration :
+        planType === 'premium' ? 3500 * duration :
+        planType === 'business' ? 5000 * duration : 0
+      );
+  
+      // Create new summary
+      const summary = document.createElement('div');
+      summary.id = 'planSummary';
+      summary.className = 'text-sm text-blue-600 font-semibold mt-2';
+      summary.innerHTML = `आपने चुना है: <strong>${planType.toUpperCase()}</strong> प्लान (${duration} महीने) – ₹${amount} कुल`;
+  
+      const planSection = document.querySelector('#vendorRegisterForm .grid.md\\:grid-cols-3');
+      if (planSection) {
+        planSection.parentNode.insertBefore(summary, planSection.nextSibling);
+      }
+    }, 100);
+  }
+  
+  </script>
+ 
+  <body>
+    <label class="block text-sm font-bold mb-1">सेवाएं चुनें *</label>
+<select name="services" required class="w-full border p-2 rounded">
+  <option value="" disabled selected>सेवा चुनें</option>
+  <option value="kirana">किराना</option>
+  <option value="kapda">कपड़ा</option>
+  <option value="fal-sabji">फल-सब्ज़ी</option>
+  <option value="electronics">इलेक्ट्रॉनिक्स</option>
+  <option value="daily-needs">डेली नीड्स</option>
+</select>
+
+    <div id="serviceProductList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"></div>
+
+    <script>
+      // Listener to track dropdown change
+      document.querySelector('select[name="services"]').addEventListener('change', function (e) {
+        const category = e.target.value;
+        loadServiceProducts(category);
+      });
+    
+      function loadServiceProducts(categoryName) {
+        fetch(`/api/service-products?category=${categoryName}`)
+          .then(res => res.json())
+          .then(data => {
+            const container = document.getElementById('serviceProductList');
+            container.innerHTML = '';
+    
+            if (!data.products || data.products.length === 0) {
+              container.innerHTML = `<p>कोई प्रोडक्ट नहीं मिला</p>`;
+              return;
+            }
+    
+            data.products.forEach(product => {
+              const card = document.createElement('div');
+              card.className = 'border p-4 rounded shadow';
+    
+              card.innerHTML = `
+                <img src="${product.main_image_url}" class="w-full h-40 object-cover mb-2" />
+                <h3 class="text-lg font-semibold">${product.name}</h3>
+                <p>₹${product.price}</p>
+                <button class="bg-green-600 text-white px-3 py-1 mt-2 rounded">ऑर्डर करें</button>
+              `;
+    
+              container.appendChild(card);
+            });
+          })
+          .catch(err => {
+            console.error('Error:', err);
+            alert('प्रोडक्ट लोड करने में दिक्कत आई');
+          });
+      }
+    </script>
+    
+      
 </body>
+
 </html>
 
 
