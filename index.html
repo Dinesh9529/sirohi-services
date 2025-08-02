@@ -8,13 +8,6 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <meta charset="utf-8"/>
-<style>
-  .modal-body {
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-</style>
-</head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Sirohi Services - Multi-Vendor Platform</title>
 <link rel="stylesheet" href="style.css" />
@@ -325,286 +318,73 @@
 </div>
 </div>
 </section>
- <!-- Detailed Services Section -->
- <section class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">सभी सेवाएं</h2>
-      <div class="services-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <!-- Service Cards will be inserted here -->
-          <div class="card">
-              <img src="electrician.jpg" alt="Electrician">
-              <p>इलेक्ट्रीशियन</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20इलेक्ट्रीशियन%20की%20सेवा%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="plumber.jpg" alt="Plumber">
-              <p>प्लंबर</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20प्लंबर%20की%20सेवा%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="cctv.jpg" alt="CCTV">
-              <p>CCTV</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20CCTV%20इंस्टॉलेशन%20करवाना%20है।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="clothes.jpg" alt="Clothes">
-              <p>कपड़े की दुकान</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मैं%20कपड़े%20की%20जानकारी%20लेना%20चाहता%20हूँ।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="cafe.jpg" alt="Cafe">
-              <p>कैफे</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20कैफे%20की%20लोकेशन%20और%20मेन्यू%20जानना%20है।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="schools.jpg" alt="Schools">
-              <p>Schools</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Schools%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="hospitals.png" alt="Hospitals">
-              <p>Hospitals</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Hospitals%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="doctor.png" alt="Doctor">
-              <p>Doctor</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Doctor%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="medical.png" alt="Medical">
-              <p>Medical</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Medical%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="kirana_shop.png" alt="Kirana  की दुकान">
-              <p>Kirana  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Kirana%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="milk_dairy.png" alt="Milk Dairy">
-              <p>Milk Dairy</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Dairy%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="nasta_shop.png" alt="Nasta Shop">
-              <p>Nasta  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Nasta%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="jwellery_shop.png" alt="Jwellery  Shop">
-              <p>Jwellery  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Jwellery%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="tent_house.png" alt="Tent House">
-              <p>Tent  House</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Tent%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="electronic_shop.png" alt="Electronic Shop">
-              <p>Electronic Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Electronic%20Item%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="ayurvedic_shop.png" alt="Ayurvedic Shop">
-              <p>Ayurvedic  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Ayurvedic%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="insurance_office.png" alt="Insurance Office">
-              <p>Insurance Office</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Insurance%20Office%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="insurance_advisor.png" alt="Insurance Advisor">
-              <p>Insurance Advisor</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Insurance%20Advisor%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="bank.png" alt="Bank">
-              <p>Bank</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Banks%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="nbfc.png" alt="NBFC">
-              <p>NBFC</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20NBFC%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="construction.png" alt="Construction">
-              <p>Construction</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Contractor%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="property.png" alt="Property">
-              <p>Property</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Property%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="property_brokers.jpg" alt="Property Brokers">
-              <p>Property Brokers</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Property%20Brokers%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="mobile_shop.png" alt="Mobile Shop">
-              <p>Mobile  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Mobile%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="mobile_repairing_shop.png" alt="Mobile Repairing  Shop">
-              <p>Mobile Repairing   Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Mobile%20Repairing%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="sweets_shops.png" alt="Sweets  Shops">
-              <p>Sweet  Shops</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Mithai%20%20की%20दुकानs%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="gym.png" alt="Gym">
-              <p>Gym</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Gym%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="rental_homes.png" alt="Rental Homes">
-              <p>Rental Homes</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Rental%20Homes%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="plots.png" alt="Plots">
-              <p>Plots</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Plots%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="car_showroom.png" alt="Car Showroom">
-              <p>Car Showroom</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Car%20Showroom%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="bike_showroom.png" alt="Bike Showroom">
-              <p>Bike Showroom</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Bike%20Showroom%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="masaj_parlour.png" alt="Masaj  Parlour">
-              <p>Masaj  Parlour</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Masaj%20%20पार्लर%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="beauti_parlour.png" alt="Beauti  Parlour">
-              <p>Beauti  Parlour</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Beauti%20%20पार्लर%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="ladies_clothes_shop.png" alt="Ladies Clothes  Shop">
-              <p>Ladies Clothes  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Ladies%20Clothes%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="gents_clothes_shop.png" alt="Gents Clothes  Shop">
-              <p>Gents Clothes  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Gents%20Clothes%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="child_clothes_shop.png" alt="Child Clothes  Shop">
-              <p>Child Clothes  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Child%20Clothes%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="airtel.png" alt="Airtel">
-              <p>Airtel</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Airtel%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="jio.png" alt="Jio">
-              <p>Jio</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Jio%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="shoes_shop.png" alt="Shoes  Shop">
-              <p>Shoes  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Shoes%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="books_shop.png" alt="Books  Shop">
-              <p>Books  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Books%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="coaching_centers.png" alt="Coaching Centers">
-              <p>Coaching Centers</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Coaching%20Centers%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="library.png" alt="Library">
-              <p>Library</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Library%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="computer_shop.png" alt="Computer  Shop">
-              <p>Computer  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Computer%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="tailor_shop.png" alt="Tailor Shop">
-              <p>Tailor  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Tailor%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="fruit_shop.png" alt="Fruit  Shop">
-              <p>Fruit  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Fruit%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="fresh_vegetable_shop.png" alt="Fresh Vegetable  Shop">
-              <p>Fresh Vegetable  Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Fresh%20Vegetable%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="video_shooting_shop.png" alt="Video Shooting  Shop">
-              <p>Video Shooting Shop</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Marrige%20Video%20Shooting%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="marriege_garden.png" alt="Marriege Garden">
-              <p>Marriege Garden</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Marriege%20Garden%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="marriege_hall.png" alt="Marriege Hall">
-              <p>Marriege Hall</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Marriege%20Hall%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="advocate.png" alt="Advocate">
-              <p>Advocate</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Advocate%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="holsel_anaj_ke_vikreta.png" alt="Holsel Anaj Ke Vikreta">
-              <p>Holsel Anaj Ke Vikreta</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Holsel%20Anaj%20Ke%20Vikreta%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
-          </div>
-          <div class="card">
-              <img src="ca_service.jpg" alt="Chartered Accountant">
-              <p>Chartered Accountant (CA)</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Chartered%20Accountant%20(सीए)%20की%20सेवाएँ%20चाहिए।%0A--%0A(Sirohi Services से)" target="_blank">
-                  WhatsApp पर पूछें
-              </a>
-          </div>
-          <div class="card">
-              <img src="tiles_shop.png" alt="Tiles की दुकान">
-              <p>Tiles की दुकान</p>
-              <a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Tiles%20की%20दुकान%20की%20जानकारी%20चाहिए।%0A--%0A(Sirohi Services से)" target="_blank">
-                  WhatsApp पर पूछें
-              </a>
-          </div>
-      </div>
-  </div>
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12">सभी सेवाएं</h2>
+<div class="services-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<div class="card">
+<img alt="Electrician" src="https://via.placeholder.com/80x80/FFD700/000000?text=⚡"/>
+<p>इलेक्ट्रीशियन</p>
+<a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20इलेक्ट्रीशियन%20की%20सेवा%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Plumber" src="https://via.placeholder.com/80x80/1E90FF/FFFFFF?text=🔧"/>
+<p>प्लंबर</p>
+<a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20प्लंबर%20की%20सेवा%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="CCTV" src="https://via.placeholder.com/80x80/FF6347/FFFFFF?text=📹"/>
+<p>CCTV</p>
+<a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20CCTV%20इंस्टॉलेशन%20करवाना%20है。" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Clothes" src="https://via.placeholder.com/80x80/9370DB/FFFFFF?text=👕"/>
+<p>कपड़े की दुकान</p>
+<a href="https://wa.me/918890784773?text=नमस्ते%2C%20मैं%20कपड़े%20की%20जानकारी%20लेना%20चाहता%20हूँ।" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Cafe" src="https://via.placeholder.com/80x80/8B4513/FFFFFF?text=☕"/>
+<p>कैफे</p>
+<a href="https://wa.me/918890784773?text=नमस्ते%2C%20मुझे%20कैफे%20की%20लोकेशन%20और%20मेन्यू%20जानना%20है。" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Schools" src="https://via.placeholder.com/80x80/20B2AA/FFFFFF?text=🏫"/>
+<p>Schools</p>
+<a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Schools%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Hospitals" src="https://via.placeholder.com/80x80/DC143C/FFFFFF?text=🏥"/>
+<p>Hospitals</p>
+<a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Hospitals%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Doctor" src="https://via.placeholder.com/80x80/228B22/FFFFFF?text=👨‍⚕️"/>
+<p>Doctor</p>
+<a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Doctor%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Medical" src="https://via.placeholder.com/80x80/FF1493/FFFFFF?text=💊"/>
+<p>Medical</p>
+<a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Medical%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Kirana Shop" src="https://via.placeholder.com/80x80/FF8C00/FFFFFF?text=🛒"/>
+<p>Kirana Shop</p>
+<a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Kirana%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Milk Dairy" src="https://via.placeholder.com/80x80/FFFFFF/000000?text=🥛"/>
+<p>Milk Dairy</p>
+<a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Dairy%20की%20जानकारी%20चाहिए。" target="_blank">WhatsApp पर पूछें</a>
+</div>
+<div class="card">
+<img alt="Nasta Shop" src="https://via.placeholder.com/80x80/FFD700/000000?text=🍿"/>
+<p>Nasta Shop</p>
+<a href="https://wa.me/918890784773?text=नमस्ते,%20मुझे%20Nasta%20%20की%20दुकान%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp पर पूछें</a>
+</div>
+</div>
+</div>
 </section>
-
-
 <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-12">वेंडर प्लान्स</h2>
@@ -1294,151 +1074,32 @@
 <i class="fas fa-times text-xl"></i>
 </button>
 </div>
-<!-- 📦 Add Product Form -->
-<!-- Include this inside your modal -->
-<form id="addProductForm" class="space-y-4 p-4">
-  <div class="modal-body grid grid-cols-1 md:grid-cols-2 gap-4">
-    <!-- Left column -->
-    <div>
-      <label class="block text-sm font-bold mb-1">प्रोडक्ट की इमेज *</label>
-      <input type="file" accept="image/*" id="productImage" required class="w-full border p-2 rounded" />
-    </div>
+<form class="space-y-4" id="addProductForm">
+<div>
+  <label class="block text-gray-700 text-sm font-bold mb-2">प्रोडक्ट की इमेज *</label>
+  <input type="file" accept="image/*" id="productImage" required class="w-full p-2 border rounded" />
+</div>
 
-    <div>
-      <label class="block text-sm font-bold mb-1">कैटेगरी *</label>
-      <select name="category" required class="w-full border p-2 rounded">
-        <option value="kirana">Kirana</option>
-        <option value="kapda">Kapda</option>
-      </select>
-    </div>
-
-    <!-- Right column -->
-    <div>
-      <label class="block text-sm font-bold mb-1">प्रोडक्ट का नाम *</label>
-      <input type="text" id="productName" placeholder="नाम" required class="w-full border p-2 rounded" />
-    </div>
-
-    <div>
-      <label class="block text-sm font-bold mb-1">कीमत (₹) *</label>
-      <input type="number" id="productPrice" placeholder="कीमत" required class="w-full border p-2 rounded" />
-    </div>
-
-    <div>
-      <label class="block text-sm font-bold mb-1">स्टॉक *</label>
-      <input type="number" id="productStock" placeholder="स्टॉक की मात्रा" required class="w-full border p-2 rounded" />
-    </div>
-
-    <div>
-      <label class="block text-sm font-bold mb-1">विवरण</label>
-      <textarea id="productDescription" rows="3" placeholder="प्रोडक्ट का विवरण" class="w-full border p-2 rounded"></textarea>
-    </div>
-  </div>
-
-  <div class="pt-4">
-    <button type="button" onclick="addProduct()" class="w-full bg-green-600 text-white py-3 rounded font-semibold hover:bg-green-700">
-      प्रोडक्ट जोड़ें
-    </button>
-  </div>
+<div>
+<label class="block text-gray-700 text-sm font-bold mb-2">प्रोडक्ट का नाम *</label>
+<input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="प्रोडक्ट का नाम" type="text" id="productName" required/>
+</div>
+<div>
+<label class="block text-gray-700 text-sm font-bold mb-2">कीमत (₹) *</label>
+<input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="कीमत" type="number" id="productPrice" required/>
+</div>
+<div>
+<label class="block text-gray-700 text-sm font-bold mb-2">स्टॉक *</label>
+<input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="स्टॉक की मात्रा" type="number" id="productStock" required/>
+</div>
+<div>
+<label class="block text-gray-700 text-sm font-bold mb-2">विवरण</label>
+<textarea class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="प्रोडक्ट का विवरण" rows="3" id="productDescription"></textarea>
+</div>
+<button type="button" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300" onclick="addProduct()">प्रोडक्ट जोड़ें</button>
 </form>
-
-<!-- 📦 Product Listing Container -->
-<div id="productList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"></div>
-
-<!-- 📜 JavaScript -->
-<script>
-// 🔄 Add Single Product
-function addProduct() {
-  console.log("🟢 Product form submission triggered");
-
-  const name = document.getElementById('productName').value.trim();
-  const price = parseInt(document.getElementById('productPrice').value);
-  const stock = parseInt(document.getElementById('productStock').value);
-  const description = document.getElementById('productDescription').value.trim();
-  const imageFile = document.getElementById('productImage').files[0];
-
-  if (!name || !price || !stock || !imageFile) {
-    alert('कृपया सभी आवश्यक फील्ड भरें');
-    return;
-  }
-
-  const formData = new FormData();
-  formData.append('name', name);
-  formData.append('price', price);
-  formData.append('stock', stock);
-  formData.append('description', description);
-  formData.append('image', imageFile);
-  formData.append('vendor_id', currentUser.id); // ✅ Vendor info भेजना ज़रूरी
-
-  fetch('https://sirohi-backend.onrender.com/api/products', {
-    method: 'POST',
-    body: formData
-  })
-    .then(res => res.json())
-    .then(data => {
-      alert('✅ प्रोडक्ट सफलतापूर्वक जोड़ा गया!');
-      document.getElementById('addProductForm').reset();
-      loadVendorProducts();
-    })
-    .catch(err => {
-      console.error('❌ Error:', err);
-      alert('⚠️ कुछ गड़बड़ हो गई!');
-    });
-}
-
-// 🔁 Upload Multiple Products (Batch utility)
-function uploadProducts(productsArray) {
-  productsArray.forEach(product => {
-    const formData = new FormData();
-    formData.append('name', product.name);
-    formData.append('price', product.price);
-    formData.append('stock', product.stock);
-    formData.append('description', product.description);
-    formData.append('image', product.image); // File object
-    formData.append('vendor_id', currentUser.id);
-
-    fetch('https://sirohi-backend.onrender.com/api/products', {
-      method: 'POST',
-      body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log("✅ Uploaded:", data.name);
-    })
-    .catch(err => console.error('❌ Batch Upload Error:', err));
-  });
-}
-
-// 📥 Load & Show Vendor Products
-function loadVendorProducts() {
-  fetch(`https://sirohi-backend.onrender.com/api/vendor-products?vendor_id=${currentUser.id}`)
-    .then(res => res.json())
-    .then(products => {
-      const container = document.getElementById('productList');
-      container.innerHTML = '';
-      products.forEach(renderProductCard);
-    })
-    .catch(err => console.error('❌ Load error:', err));
-}
-
-// 🎨 Render One Product Card
-function renderProductCard(product) {
-  const container = document.getElementById('productList');
-
-  const card = document.createElement('div');
-  card.className = 'border p-4 rounded shadow hover:shadow-lg transition';
-
-  card.innerHTML = `
-    <img src="${product.image_url}" alt="${product.name}" class="w-full h-40 object-cover rounded mb-3" />
-    <h2 class="text-lg font-semibold">${product.name}</h2>
-    <p class="text-gray-600">₹${product.price}</p>
-    <p class="text-sm text-gray-500">स्टॉक: ${product.stock}</p>
-    <p class="text-sm mt-2">${product.description || ''}</p>
-  `;
-
-  container.appendChild(card);
-}
-</script>
-
+</div>
+</div>
 
 <div class="notification hide" id="notification">
 <div class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
@@ -2330,51 +1991,29 @@ function showView(viewName) {
   loadVendorOrders(); // Reload orders
         }
 
-        function createVendorProductCard(product) {
-  const card = document.createElement('div');
-  card.className = 'border p-4 rounded shadow mb-4';
+        function loadVendorProducts() {
+            const vendorProductsContainer = document.getElementById('vendorProductsContainer');
+            // Get products for current vendor
+            const currentVendor = vendors.find(v => v.id === currentUser.id);
+            const myProducts = currentVendor ? currentVendor.products : [];
 
-  if (product.image) {
-    const img = document.createElement('img');
-    img.src = product.image;
-    img.alt = product.name;
-    img.className = 'w-full h-48 object-cover mb-2';
-    card.appendChild(img);
-  }
+            if (myProducts.length === 0) {
+                vendorProductsContainer.innerHTML = `
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-boxes text-4xl mb-4"></i>
+                        <p>अभी तक कोई प्रोडक्ट नहीं जोड़ा गया है</p>
+                    </div>
+                `;
+                return;
+            }
 
-  const title = document.createElement('h3');
-  title.textContent = product.name;
-  title.className = 'text-lg font-bold';
-  card.appendChild(title);
+            vendorProductsContainer.innerHTML = '';
+            myProducts.forEach(product => {
+                const productCard = createVendorProductCard(product);
+                vendorProductsContainer.appendChild(productCard);
+            });
+        }
 
-  const price = document.createElement('p');
-  price.textContent = `₹${product.price}`;
-  price.className = 'text-green-600 font-semibold';
-  card.appendChild(price);
-
-  if (currentUser?.type === 'vendor') {
-    const btnGroup = document.createElement('div');
-    btnGroup.className = 'mt-3 flex gap-3';
-
-    const editBtn = document.createElement('button');
-    editBtn.textContent = '✏️ Edit';
-    editBtn.className = 'bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600';
-    editBtn.onclick = () => editProduct(product.id);
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = '🗑️ Delete';
-    deleteBtn.className = 'bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600';
-    deleteBtn.onclick = () => deleteProduct(product.id);
-
-    btnGroup.appendChild(editBtn);
-    btnGroup.appendChild(deleteBtn);
-    card.appendChild(btnGroup);
-  }
-
-  return card;
-}
-
-        
         function createVendorProductCard(product) {
             const div = document.createElement('div');
             div.className = 'product-card';
@@ -2402,30 +2041,58 @@ function showView(viewName) {
             return div;
         }
 
-        
+        function addProduct() {
+  const name = document.getElementById('productName').value.trim();
+  const price = parseInt(document.getElementById('productPrice').value);
+  const stock = parseInt(document.getElementById('productStock').value);
+  const description = document.getElementById('productDescription').value.trim();
+  const imageInput = document.getElementById('productImage');
+  const imageFile = imageInput.files[0];
+
+  if (!name || !price || !stock || !imageFile) {
+    showNotification('कृपया सभी आवश्यक फील्ड भरें', 'error');
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('price', price);
+  formData.append('stock', stock);
+  formData.append('description', description);
+  formData.append('image', imageFile);
+
+  fetch('https://sirohi-backend.onrender.com/api/products', {
+    method: 'POST',
+    body: formData
+  })
+    .then(res => res.json())
+    .then(data => {
+      showNotification('प्रोडक्ट सफलतापूर्वक जोड़ा गया!');
+      hideModal('addProductModal');
+      loadVendorProducts();
+    })
+    .catch(err => {
+      console.error('Error:', err);
+      showNotification('कुछ गड़बड़ हो गई!', 'error');
+    });
+}
+
 
         function editProduct(productId) {
-  alert('⚙️ प्रोडक्ट एडिट करने की सुविधा जल्द आ रही है');
-}
-
+            showNotification('प्रोडक्ट एडिट करने की सुविधा जल्द ही आएगी');
+        }
 
         function deleteProduct(productId) {
-  if (!confirm('क्या आप इस प्रोडक्ट को डिलीट करना चाहते हैं?')) return;
+            if (confirm('क्या आप इस प्रोडक्ट को डिलीट करना चाहते हैं?')) {
+                const vendorIndex = vendors.findIndex(v => v.id === currentUser.id);
+                if (vendorIndex !== -1) {
+                    vendors[vendorIndex].products = vendors[vendorIndex].products.filter(p => p.id !== productId);
+                }
 
-  fetch(`https://sirohi-backend.onrender.com/api/products/${productId}`, {
-    method: 'DELETE'
-  })
-  .then(res => res.json())
-  .then(data => {
-    alert('🗑️ प्रोडक्ट डिलीट कर दिया गया!');
-    loadVendorProducts();
-  })
-  .catch(err => {
-    console.error('❌ Error:', err);
-    alert('⚠️ डिलीट नहीं हो पाया');
-  });
-}
-
+                showNotification('प्रोडक्ट डिलीट कर दिया गया');
+                loadVendorProducts();
+            }
+        }
 
         // Privacy-protected contact functions
         function contactVendorSecure(vendorId) {
@@ -3066,18 +2733,10 @@ function deleteVendor(email) {
 </script>
 
 
-<div id="adminExportButtons" class="hidden">
-  <button onclick="downloadVendorCSV()" class="bg-blue-600 text-white px-4 py-2 rounded">📤 Export Vendors</button>
-  <button onclick="downloadDeliveryCSV()" class="bg-green-600 text-white px-4 py-2 rounded">📤 Export Delivery Boys</button>
+<div class="flex gap-4 mb-4">
+  <button type="button" onclick="downloadVendorCSV()" class="bg-blue-600 text-white px-4 py-2 rounded">📥 Export Vendors</button>
+  <button type="button" onclick="downloadDeliveryCSV()" class="bg-green-600 text-white px-4 py-2 rounded">📥 Export Delivery Boys</button>
 </div>
-<script>
-  // जब page लोड हो जाए या login हो चुका हो
-  document.addEventListener('DOMContentLoaded', function () {
-    if (currentUser && currentUser.role === 'admin') {
-      document.getElementById('adminExportButtons').classList.remove('hidden');
-    }
-  });
-</script>
 
 <script>
 function downloadVendorCSV() {
@@ -3319,6 +2978,8 @@ function markDelivered(orderId) {
     loadDeliveryDashboard();
   }
 }
+
+
 function createVendorProductCard(product) {
   const card = document.createElement('div');
   card.className = 'border p-4 rounded shadow mb-4';
@@ -3332,40 +2993,38 @@ function createVendorProductCard(product) {
     card.appendChild(img);
   }
 
+  function createProductCard(product) {
+  const card = document.createElement('div');
+  card.className = 'bg-white rounded-xl shadow-lg p-6 card-hover';
+
+  const image = document.createElement('img');
+  image.src = product.image;
+  image.alt = product.name;
+  image.className = 'w-full h-48 object-cover mb-4 rounded-lg';
+  card.appendChild(image);
+
   const title = document.createElement('h3');
   title.textContent = product.name;
-  title.className = 'text-lg font-bold';
+  title.className = 'text-lg font-bold mb-2';
   card.appendChild(title);
 
   const price = document.createElement('p');
   price.textContent = `₹${product.price}`;
-  price.className = 'text-green-600 font-semibold';
+  price.className = 'text-green-600 font-semibold mb-2';
   card.appendChild(price);
 
-  // Vendor buttons (Edit/Delete)
-  if (currentUser?.type === 'vendor') {
-    const btnGroup = document.createElement('div');
-    btnGroup.className = 'mt-3 flex gap-3';
+  const stock = document.createElement('p');
+  stock.textContent = `स्टॉक: ${product.stock}`;
+  stock.className = 'text-sm text-gray-600 mb-2';
+  card.appendChild(stock);
 
-    const editBtn = document.createElement('button');
-    editBtn.textContent = '✏️ Edit';
-    editBtn.className = 'bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600';
-    editBtn.onclick = () => editProduct(product.id);
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = '🗑️ Delete';
-    deleteBtn.className = 'bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600';
-    deleteBtn.onclick = () => deleteProduct(product.id);
-
-    btnGroup.appendChild(editBtn);
-    btnGroup.appendChild(deleteBtn);
-    card.appendChild(btnGroup);
-  }
+  const description = document.createElement('p');
+  description.textContent = product.description;
+  description.className = 'text-sm text-gray-700';
+  card.appendChild(description);
 
   return card;
 }
-
-</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -3531,63 +3190,8 @@ function verifyAdminUnlockCode() {
   }
   
   </script>
- 
-  <body>
-    <label class="block text-sm font-bold mb-1">सेवाएं चुनें *</label>
-<select name="services" required class="w-full border p-2 rounded">
-  <option value="" disabled selected>सेवा चुनें</option>
-  <option value="kirana">किराना</option>
-  <option value="kapda">कपड़ा</option>
-  <option value="fal-sabji">फल-सब्ज़ी</option>
-  <option value="electronics">इलेक्ट्रॉनिक्स</option>
-  <option value="daily-needs">डेली नीड्स</option>
-</select>
-
-    <div id="serviceProductList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"></div>
-
-    <script>
-      // Listener to track dropdown change
-      document.querySelector('select[name="services"]').addEventListener('change', function (e) {
-        const category = e.target.value;
-        loadServiceProducts(category);
-      });
-    
-      function loadServiceProducts(categoryName) {
-        fetch(`/api/service-products?category=${categoryName}`)
-          .then(res => res.json())
-          .then(data => {
-            const container = document.getElementById('serviceProductList');
-            container.innerHTML = '';
-    
-            if (!data.products || data.products.length === 0) {
-              container.innerHTML = `<p>कोई प्रोडक्ट नहीं मिला</p>`;
-              return;
-            }
-    
-            data.products.forEach(product => {
-              const card = document.createElement('div');
-              card.className = 'border p-4 rounded shadow';
-    
-              card.innerHTML = `
-                <img src="${product.main_image_url}" class="w-full h-40 object-cover mb-2" />
-                <h3 class="text-lg font-semibold">${product.name}</h3>
-                <p>₹${product.price}</p>
-                <button class="bg-green-600 text-white px-3 py-1 mt-2 rounded">ऑर्डर करें</button>
-              `;
-    
-              container.appendChild(card);
-            });
-          })
-          .catch(err => {
-            console.error('Error:', err);
-            alert('प्रोडक्ट लोड करने में दिक्कत आई');
-          });
-      }
-    </script>
-    
-      
+  
 </body>
-
 </html>
 
 
